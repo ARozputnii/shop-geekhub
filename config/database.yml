@@ -1,0 +1,28 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: shop-geekhub_development
+  username: <%= Rails.application.credentials.aws[:db_name] %>
+  password: <%= Rails.application.credentials.aws[:db_password] %>
+  encoding: unicode
+  host: localhost
+  pool: 5
+
+test:
+  <<: *default
+  database: shop-geekhub_test
+  username: <%= Rails.application.credentials.aws[:db_name] %>
+  password: <%= Rails.application.credentials.aws[:db_password] %>
+  encoding: unicode
+  host: localhost
+  pool: 5
+
+production:
+  <<: *default
+  database: shop-geekhub_production
+  username: <%= Rails.application.credentials.aws[:db_name] %>
+  password: <%= Rails.application.credentials.aws[:db_password] %>
