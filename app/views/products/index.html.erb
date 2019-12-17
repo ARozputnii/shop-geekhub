@@ -1,0 +1,9 @@
+<h3>Список товаров:<br>
+  <% @products.each do |product| %>
+    <%= link_to product.title, product %>
+    <p>Стоимость: <%= product.price %> грн.</p>
+    <button type="button" class="btn btn-outline-secondary">Купить</button><br>
+  <% end %>
+</h3>
+
+<%= will_paginate(@products, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: 'pagination-sm justify-content-center') %>
