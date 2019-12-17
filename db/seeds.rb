@@ -1,6 +1,6 @@
 require 'faker'
 
-categories = Category.create([{title: 'Book' }, {title: 'Magazine' }, {title: 'Manga' }])
+Category.create([{title: 'Book' }, {title: 'Magazine' }, {title: 'Manga' }])
 
 10.times do
   Product.create([{
