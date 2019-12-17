@@ -56,3 +56,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'bootstrap',  '~>4.3.1'
 gem 'font_awesome5_rails'
+gem 'annotate', '~> 3.0', '>= 3.0.3' #для роботы с дб моделями
+gem 'byebug'
