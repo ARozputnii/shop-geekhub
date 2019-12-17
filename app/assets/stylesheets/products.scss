@@ -6,6 +6,19 @@
 p {
   font-size: 14px;
 }
-.page-link {
-  color: #d6d6d6;
+
+strong{
+  font-size: 25px;
 }
+.cart_price{
+  margin-top: 30px;
+}
+
+.mb-5{
+  text-align: center;
+  margin-top: 30px;
+}
+.product_title:link {  color: #292929;}
+.product_title:visited { text-decoration: none; color: #292929;}
+.product_title:active { text-decoration: none; color: #292929;}
+.product_title:hover { color: black; font-size: 22.5px; text-decoration: none;}
