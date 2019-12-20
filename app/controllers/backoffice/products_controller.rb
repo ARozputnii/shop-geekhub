@@ -1,4 +1,4 @@
-class ProductsController < ApplicationController
+class Backoffice::ProductsController < BackofficeController
   def index
     @products = Product.all.order(created_at: :desc).paginate(page: params[:page], per_page: 8)
   end
@@ -6,4 +6,6 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
   end
+end
+
 end

@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :products
   root 'products#index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  resources :products
+
+  namespace :admin do
+    resource :categories, controller: 'backoffice/categories'
+    resource :products, controller: 'backoffece/products'
+  end
 end
