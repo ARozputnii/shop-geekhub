@@ -3,8 +3,9 @@ Rails.application.routes.draw do
 
   resources :products
 
-  namespace :admin do
-    resource :categories, controller: 'backoffice/categories'
-    resource :products, controller: 'backoffece/products'
+
+  scope '/admin' do
+    resources :categories, controller: 'backoffice/categories'
+    resources :products, controller: 'backoffice/products'
   end
 end

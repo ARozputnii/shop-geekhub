@@ -1,6 +1,15 @@
-class Backoffice::ProductsController < BackofficeController
+class Backoffice::ProductsController < Backoffice::BackofficeController
+
   def index
     @products = Product.all.order(created_at: :desc).paginate(page: params[:page], per_page: 8)
+  end
+
+  def new
+
+  end
+
+  def create
+
   end
 
   def show
@@ -8,4 +17,3 @@ class Backoffice::ProductsController < BackofficeController
   end
 end
 
-end

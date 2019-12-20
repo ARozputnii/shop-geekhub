@@ -1,2 +1,2 @@
-class Backoffice::CategoriesController < ApplicationController
+class Backoffice::CategoriesController < Backoffice::BackofficeController
 end
