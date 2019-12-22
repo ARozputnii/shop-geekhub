@@ -1,0 +1,27 @@
+<h3 class="row justify-content-center mt-1"><%= @category.title %></h3>
+<div class="row">
+  <% @category.products.each do |product| %>
+    <div class="col-lg-4 col-xl-3 col-md-6 col">
+      <div class="mb-5">
+        <%= link_to product, class:"product_title" do %>
+          <img src="http://effects1.ru/png/kartinka/4/kniga/1/kniga_21-320.png" alt="">
+          <div class="cart_title">
+            <b><%= product.title%></b>
+          </div>
+          <div class="row cart_price">
+            <div class="col">
+              <h5><%= product.price %> грн</h5>
+            </div>
+            <div class="col">
+              <i class="fas fa-shopping-cart"></i>
+              <i class="far fa-heart"></i>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
+<div class="row justify-content-center ">
+  <%= will_paginate(@products, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: 'pagination-sm ') %>
+</div>
