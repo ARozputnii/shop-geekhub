@@ -1,5 +1,5 @@
 class Backoffice::CategoriesController < Backoffice::BackofficeController
-  before_action :find_category, only: %i[nshow edit update destroy]
+  before_action :find_category, only: %i[show edit update destroy]
 
   def index
     @categories = if params[:search]
@@ -9,7 +9,9 @@ class Backoffice::CategoriesController < Backoffice::BackofficeController
                   end
   end
 
-  def show; end
+  def show
+    @products = Product.all.order(created_at: :desc).paginate(page: params[:page], per_page: 8)
+  end
 
   def new
     @category = Category.new
@@ -50,5 +52,4 @@ class Backoffice::CategoriesController < Backoffice::BackofficeController
   def category_params
     params.require(:category).permit(:title, :description)
   end
-end
 end

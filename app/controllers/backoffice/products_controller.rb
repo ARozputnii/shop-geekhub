@@ -1,12 +1,13 @@
 class Backoffice::ProductsController < Backoffice::BackofficeController
-  before_action :find_product, only: %i[nshow edit update destroy]
+  before_action :find_product, only: %i[show edit update destroy]
 
   def index
     @products = if params[:search]
-                  Product.search(params[:search]).order(created_at: :desc).paginate(page: params[:page], per_page: 8)
+                  Product.search(params[:search]).order(created_at: :desc).paginate(page: params[:page], per_page: 14)
                 else
-                  Product.all.order(created_at: :desc).paginate(page: params[:page], per_page: 8)
+                  Product.all.order(created_at: :desc).paginate(page: params[:page], per_page: 14)
                 end
+    @categories = Category.all
   end
 
   def show; end

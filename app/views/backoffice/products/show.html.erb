@@ -1,0 +1,6 @@
+<%= @product.title %>
+<p>Категория: <%= @product.category.title %></p>
+<p>Описание:  <%= @product.description %></p>
+<p>Стоимость: <%= @product.price %> грн.</p>
+<button type="button" class="btn btn-outline-secondary">Купить</button><br>
+<%= link_to 'back', admin_products_path, class:"btn btn-outline-secondary" %>
