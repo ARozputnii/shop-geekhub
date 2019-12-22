@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'backoffice/Categories'
   root 'products#index'
 
   resources :products
