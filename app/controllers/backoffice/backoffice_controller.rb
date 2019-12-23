@@ -3,6 +3,6 @@ class Backoffice::BackofficeController < ActionController::Base
   layout 'backoffice.html.erb'
 
   def admin_verify
-    redirect_to home_path unless current_user&.admin?
+    redirect_to root_path unless current_user&.admin?
   end
 end

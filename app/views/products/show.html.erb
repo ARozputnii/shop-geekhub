@@ -1,6 +1,19 @@
-
-    <%= @product.title %>
-    <p>Категория: <%= @product.category.title %></p>
-    <p>Описание:  <%= @product.description %></p>
-    <p>Стоимость: <%= @product.price %> грн.</p>
-    <button type="button" class="btn btn-outline-secondary">Купить</button><br>
+<div class="background">
+  <div class="offset-2">
+    <p>
+      <% @product.images.each do |image| %>
+        <%= image_tag(image.url(:large)) %>
+      <% end %>
+    </p>
+    <div class="justify-content-center"><h2><%= @product.title %></h2></div>
+    <div class="row ">
+      <div class="col-sm-2">Категория: <%= @product.category.title %></div>
+      <div class="col-sm-2">Стоимость: <%= @product.price %> грн.</div>
+    </div>
+    <p class="description">Описание:  <%= @product.description %></p>
+    <div class="row">
+      <button type="button" class="btn btn-outline-secondary">Купить</button>
+      <%= link_to 'back', products_path, class:"btn btn-outline-secondary" %>
+    </div>
+  </div>
+</div>

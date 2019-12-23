@@ -2,7 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-
+.background{
+  background-color: #e7e7e7 ;
+}
 p {
   font-size: 14px;
 }
@@ -12,13 +14,26 @@ strong{
 }
 .cart_price{
   margin-top: 30px;
+  color: #4b4c4e;
 }
 
 .mb-5{
+  background: linear-gradient(to bottom, #4d4d4d, #e7e7e7, );
   text-align: center;
-  margin-top: 30px;
+  margin: 30px 20px 0 20px;
 }
-.product_title:link {  color: #292929;}
-.product_title:visited { text-decoration: none; color: #292929;}
-.product_title:active { text-decoration: none; color: #292929;}
-.product_title:hover { color: black; font-size: 22.5px; text-decoration: none;}
+.product_title:link {  color: #4f4f4f;}
+.product_title:visited { text-decoration: none; color: #4f4f4f;}
+.product_title:active { text-decoration: none; color: #4f4f4f;}
+.product_title:hover { color: black; text-decoration: none;}
+
+.btn{
+  margin-left: 10px;
+}
+.description{
+  font-size: 20px;
+  padding-top: 20px;
+}
+.btn_back{
+  padding-bottom:200px;
+}
