@@ -1,4 +1,3 @@
 class BackofficeController < ApplicationController
-  def Categories
-  end
+  def Categories; end
 end
