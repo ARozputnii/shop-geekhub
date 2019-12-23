@@ -1,6 +1,6 @@
 <div class="row">
-  <div class="col-sm-2"><h3>Products</h3></div>
-  <div class="col-sm-2"><%= link_to 'New Product', new_admin_product_path, class: 'btn btn-outline-secondary' %></div>
+  <div class="col-sm-2"><%= link_to 'New Product',  new_admin_product_path,  class: 'btn btn-outline-secondary' %></div>
+  <div class="col-sm-2"><%= link_to 'New Category', new_admin_category_path, class: 'btn btn-outline-secondary' %></div>
   <div class="col">
     <div class="form-inline">
       <%= form_tag(admin_products_path, method: "get", id: "search-form") do %>
@@ -9,6 +9,8 @@
       <% end %>
     </div>
   </div>
+</div>
+<div class="row">
   <table class="table_product">
     <tr>
       <th>Category</th>
@@ -21,27 +23,41 @@
       <% @products.each do |products| %>
         <tr>
           <td>
-            <%= link_to admin_category_path(products.category_id) do %>
-              <%= products.category.title %>
-            <% end %>
+            <%= link_to products.category.title, admin_category_path(products.category_id) %>
           </td>
           <td>
-            <%= link_to admin_product_path(products), class:'link' do %>
-              <%= products.title %>
-            <% end %>
+            <%= link_to products.title, admin_product_path(products), class:'link'%>
           </td>
           <td><%=h truncate(products.description, length: 50) %></td>
           <td><%= products.price %></td>
           <td><%= link_to 'Show', admin_product_path(products) %>  |
-          <%= link_to 'Edit', edit_admin_product_path(products) %>  |
-          <%= link_to 'Destroy', admin_product_path(products), method: :delete,
-                          data: { confirm: 'Are you sure?' } %></td>
+            <%= link_to 'Edit', edit_admin_product_path(products) %>  |
+            <%= link_to 'Destroy', admin_product_path(products), method: :delete,
+                        data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </ul>
+  </table>
+  <table class="table_category">
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Link</th>
+    </tr>
+    <ul>
+      <% @categories.each do |categories| %>
+        <tr>
+          <td><%= link_to categories.title, admin_category_path(categories), class:'link'%></td>
+          <td><%=h truncate(categories.description, length: 50) %></td>
+          <td><%= link_to 'Show', admin_category_path(categories) %>  |
+            <%= link_to 'Edit', edit_admin_category_path(categories) %>  |
+            <%= link_to 'Destroy', admin_category_path(categories), method: :delete,
+                        data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </ul>
   </table>
 </div>
-  <div class="row justify-content-center">
-    <%= will_paginate(@things, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: 'pagination-sm') %>
-  </div>
+<div class="row justify-content-center">
+  <%= will_paginate(@things, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: 'pagination-sm') %>
 </div>
