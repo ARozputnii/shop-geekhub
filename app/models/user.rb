@@ -3,11 +3,11 @@
 # Table name: users
 #
 #  id               :bigint           not null, primary key
+#  admin            :boolean          default(FALSE)
 #  crypted_password :string
 #  email            :string           not null
 #  first_name       :string
 #  last_name        :string
-#  login            :string
 #  salt             :string
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
