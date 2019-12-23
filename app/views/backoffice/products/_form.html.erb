@@ -2,7 +2,7 @@
   <%= form_with(model: [ :admin, @product ],local: true) do |form| %>
     <% if @product.errors.any? %>
       <div class="alert alert-danger">
-        <h2><%= pluralize(@product.errors.count, "error") %> prohibited this post from being saved:</h2>
+        <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
         <ul>
           <% @product.errors.full_messages.each do |message| %>
             <li><%= message %></li>

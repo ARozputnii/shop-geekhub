@@ -21,10 +21,9 @@
 #
 
 class Product < ApplicationRecord
+  mount_uploaders :images, ImageUploader
   belongs_to :category
 
   validates :title, :description, :price, presence: true
-  validates :title, uniqueness: true
-
-  mount_uploaders :images, ImageUploader
+  validates :title,  uniqueness: true
 end

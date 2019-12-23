@@ -63,4 +63,5 @@ gem 'jquery-rails'
 gem 'rubocop', '~> 0.77.0'
 gem 'sorcery'
 gem 'carrierwave', '~> 2.0'
-gem "mini_magick"
+gem 'mini_magick', '~> 4.5', '>= 4.5.1'
+gem 'rmagick'
