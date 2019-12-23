@@ -13,6 +13,7 @@
 <div class="row">
   <table class="table_product">
     <tr>
+      <th>Image</th>
       <th>Category</th>
       <th>Title</th>
       <th>Description</th>
@@ -22,6 +23,11 @@
     <ul>
       <% @products.each do |products| %>
         <tr>
+          <td>
+            <%products.images.each do |image| %>
+              <%= image_tag(image.url(:small)) %>
+            <% end %>
+          </td>
           <td>
             <%= link_to products.category.title, admin_category_path(products.category_id) %>
           </td>

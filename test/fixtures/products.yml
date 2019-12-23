@@ -4,6 +4,7 @@
 #
 #  id          :bigint           not null, primary key
 #  description :text
+#  images      :string           default([]), is an Array
 #  price       :decimal(, )
 #  title       :string
 #  created_at  :datetime         not null

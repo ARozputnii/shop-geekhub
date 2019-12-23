@@ -1,4 +1,10 @@
 <div>
+  <p>
+    <% @product.images.each do |image| %>
+      <%= image_tag(image.url(:medium)) %>
+    <% end %>
+  </p>
+
   <%= @product.title %>
   <p>Категория: <%= @product.category.title %></p>
   <p>Описание:  <%= @product.description %></p>

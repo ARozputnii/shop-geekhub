@@ -33,7 +33,7 @@ class Backoffice::ProductsController < Backoffice::BackofficeController
       redirect_to admin: @product
       flash[:notice] = 'Product has been edited'
     else
-      format.html { render :edit }
+      render :edit
     end
   end
 
@@ -49,6 +49,6 @@ class Backoffice::ProductsController < Backoffice::BackofficeController
   end
 
   def product_params
-    params.require(:product).permit(:title, :description, :category_id, :price)
+    params.require(:product).permit(:title, :description, :category_id, :price, {images: []})
   end
 end

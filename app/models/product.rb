@@ -4,6 +4,7 @@
 #
 #  id          :bigint           not null, primary key
 #  description :text
+#  images      :string           default([]), is an Array
 #  price       :decimal(, )
 #  title       :string
 #  created_at  :datetime         not null
@@ -24,4 +25,6 @@ class Product < ApplicationRecord
 
   validates :title, :description, :price, presence: true
   validates :title, uniqueness: true
+
+  mount_uploaders :images, ImageUploader
 end

@@ -8,8 +8,8 @@ class UserSessionsController < ApplicationController
     if @user
       redirect_to root_path , notice: 'Login successful'
     else
+      flash.now[:alert] = "Email or password was invalid"
       render :new
-      flash.now[:alert] = 'Login failed'
     end
   end
 

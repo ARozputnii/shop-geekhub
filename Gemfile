@@ -62,3 +62,5 @@ gem 'font_awesome5_rails'
 gem 'jquery-rails'
 gem 'rubocop', '~> 0.77.0'
 gem 'sorcery'
+gem 'carrierwave', '~> 2.0'
+gem "mini_magick"
