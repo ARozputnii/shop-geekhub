@@ -38,13 +38,16 @@
     </div>
 
     <div>
-      <% @product.images.each do |image| %>
-        <%= image_tag image.url(:large) %>
+      <% @product.images.each_with_index do |image, index| %>
+        <li>
+          <%= image_tag(image.url(:large)) %>
+          <%= link_to "Delete", admin_product_image_path(@product, index),method: :delete, data: { confirm: "Are you sure you want to delete this image?" }, class: "text-center" %>
+        </li>
       <% end %>
     </div>
 
     <br>
-    <div class="text-center actions">
+    <div class="">
       <%= form.submit 'Submit', class: "btn btn-outline-secondary" %>
       <%= link_to 'back', admin_products_path,class:"btn btn-outline-secondary"  %>
     </div>

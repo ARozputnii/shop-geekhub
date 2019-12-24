@@ -8,14 +8,7 @@
   <p>Категория: <%= @product.category.title %></p>
   <p>Описание:  <%= @product.description %></p>
   <p>Стоимость: <%= @product.price %> грн.</p>
-  <p>
-    <%= form_for @product, url: admin_product_images_path(:admin, @product), method: :post do |f| %>
-      <div class="field">
-        <%= f.file_field :images, multiple: true %>
-        <%= f.submit "Add More Images", class: "btn btn-outline-secondary" %>
-      </div>
-    <% end %>
-  </p>
+
   <button type="button" class="btn btn-outline-secondary">buy</button>
   <%= link_to 'Edit', edit_admin_product_path(@product), class:"btn btn-outline-secondary" %>
   <%= link_to 'Destroy', admin_product_path(@product), method: :delete,

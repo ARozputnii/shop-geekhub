@@ -1,22 +1,22 @@
 class ImagesController < Backoffice::BackofficeController
   before_action :set_product
 
-  #def create
-  #  add_more_images(images_params[:images]))
-  #  flash[:error] = "Failed uploading images" unless @product.save
-  #  redirect_to :back
-  #end
+  def create
+    add_more_images(images_params[:images])
+    flash[:error] = "Failed uploading images" unless @product.save
+    redirect_to :back
+  end
 
   def destroy
     remove_image_at_index(params[:id].to_i)
     flash[:error] = "Failed deleting image" unless @product.save
-    redirect_to :back
+    redirect_to edit_admin_product_path(@product)
   end
 
   private
 
   def set_product
-    @product = Product.find(params[:id])
+    @product = Product.find(params[:admin_product_id])
   end
 
   def add_more_images(new_images)
