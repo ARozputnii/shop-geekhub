@@ -3,7 +3,9 @@ if User.find_by(email: 'admin@example.com').nil?
 else
   puts 'User already exist'
 end
+
 Category.create([{ title: 'Book', description: 'desc' }, { title: 'Magazine', description: 'desc' }, { title: 'Manga', description: 'desc' }])
+
 10.times do
   Product.create([{
                    title: Faker::Book.title,
