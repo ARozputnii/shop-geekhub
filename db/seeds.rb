@@ -1,5 +1,6 @@
 if User.find_by(email: 'admin@example.com').nil?
-  User.create([email: 'admin@example.com', password: 'adminpass', admin: true])
+  User.create([email: 'admin@example.com', password: 'adminpass', password_confirmation: 'adminpass'])
+  admin: true])
 else
   puts 'User already exist'
 end
