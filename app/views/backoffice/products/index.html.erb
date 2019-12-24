@@ -24,7 +24,7 @@
       <% @products.each do |products| %>
         <tr>
           <td>
-            <%products.images.each do |image| %>
+            <% products.images.each do |image| %>
               <%= image_tag(image.url(:small)) %>
             <% end %>
           </td>

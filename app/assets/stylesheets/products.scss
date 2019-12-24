@@ -12,6 +12,13 @@ p {
 strong{
   font-size: 25px;
 }
+.product_image{
+  display: block;
+  height: 200px;
+}
+.product_image_img{
+  padding-top: 50px;
+}
 .cart_price{
   margin-top: 30px;
   color: #4b4c4e;
@@ -21,6 +28,7 @@ strong{
   background: linear-gradient(to bottom, #4d4d4d, #e7e7e7, );
   text-align: center;
   margin: 30px 20px 0 20px;
+  border-radius: 10px;
 }
 .product_title:link {  color: #4f4f4f;}
 .product_title:visited { text-decoration: none; color: #4f4f4f;}

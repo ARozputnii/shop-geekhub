@@ -30,6 +30,7 @@
     </div>
     <div class="field">
       <%= form.file_field :images, multiple: true %>
+      <%= form.hidden_field :images_cache %>
     </div><br>
     <%= form.submit 'Submit', class: "btn btn-outline-secondary" %>
     <%= link_to 'back', admin_products_path,class:"btn btn-outline-secondary"  %>
