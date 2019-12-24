@@ -3,7 +3,6 @@ if User.find_by(email: 'admin@example.com').nil?
 else
   puts 'User already exist'
 end
-
 Category.create([{ title: 'Book', description: 'desc' }, { title: 'Magazine', description: 'desc' }, { title: 'Manga', description: 'desc' }])
 10.times do
   Product.create([{
@@ -13,7 +12,6 @@ Category.create([{ title: 'Book', description: 'desc' }, { title: 'Magazine', de
                    category_id: 1
                  }])
 end
-
 10.times do
   Product.create([{
                    title: Faker::Book.title,
@@ -22,7 +20,6 @@ end
                    category_id: 2
                  }])
 end
-
 10.times do
   Product.create([{
                    title: Faker::Book.title,
