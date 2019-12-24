@@ -1,47 +1,83 @@
 // Place all the styles related to the Products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+header {
+  background: url("https://images.wallpaperscraft.ru/image/paporotnik_list_rastenie_137021_1920x1080.jpg") center center no-repeat;
+  color: #fff;
+  text-align: center;
+  background-size: cover;
+  padding: 200px 20px 90px 20px;
 
-.background{
-  background-color: #f9f9d3;
 }
-p {
-  font-size: 14px;
+header>h1{
+  font-size: 3.7em;
+  font-family: 'Raleway', sans-serif;
+  margin-bottom: 15px;
 }
 
-strong{
-  font-size: 25px;
+header>h3 {
+  font-size: 1.125em;
+  margin-bottom: 50px;
+  font-style: italic;
 }
-.product_image{
+
+header>p {
+  font-size: 0.75em;
+}
+
+.subscribe {
+  background: rgba(0,0,0,0.65);
+  display: table;
+  padding: 10px 10px 10px 10px;
+  margin: 0 auto 10px auto;
+  border-radius: 5px;
+}
+
+/*/////////////////*/
+.simle_product {
   display: block;
-  height: 200px;
+  height: 550px;
+}
+.card_body{
+  padding-top: 120px;
+}
+.card_title{
+  text-transform: uppercase;
+  font-size: 40px;
+}
+.card_text{
+  font-size: 20px;
+  padding-top: 30px;
+  padding-bottom: 50px;
+
+}
+
+
+/*/////////////////*/
+.background{
+  background: linear-gradient(to bottom, white, #ecf9ee, white);
+}
+.products_cart{
+  display: block;
+  height: 450px;
+  width: 220px;
+  margin-left: 120px;
+  margin-bottom: 40px;
 }
 .product_image_img{
-  padding-top: 50px;
+  padding-top: 80px;
+}
+.products_image{
+  padding-bottom: 20px;
 }
 .cart_price{
-  margin-top: 30px;
-  color: #373739;
-}
-
-.mb-5{
-  background: linear-gradient(to bottom, #fef6b8, #a1726a, );
-  text-align: center;
-  margin: 30px 20px 0 20px;
-  border-radius: 10px;
+  padding-top: 30px;
 }
 .product_title:link {  color: #3e3e3e;}
 .product_title:visited { text-decoration: none; color: #3e3e3e;}
 .product_title:active { text-decoration: none; color: #3e3e3e;}
 .product_title:hover { color: black; text-decoration: none;}
 
-.btn{
-  margin-left: 10px;
-}
-.description{
-  font-size: 20px;
-  padding-top: 20px;
-}
-.btn_back{
-  padding-bottom:200px;
-}
+
+
+

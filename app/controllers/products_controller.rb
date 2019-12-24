@@ -1,6 +1,11 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.all.order(created_at: :desc).paginate(page: params[:page], per_page: 8)
+    @product  = Product.first
+    @products = if params[:search]
+                  Product.search(params[:search]).paginate(page: params[:page], per_page: 8)
+                else
+                  Product.all.paginate(page: params[:page], per_page: 8)
+                end
     @categories = Category.all.order(created_at: :desc)
   end
 
