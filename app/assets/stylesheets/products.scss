@@ -38,8 +38,10 @@ header>p {
   display: block;
   height: 550px;
 }
+
 .card_body{
   padding-top: 120px;
+
 }
 .card_title{
   text-transform: uppercase;
@@ -64,6 +66,7 @@ header>p {
 .background{
   background: linear-gradient(to bottom, white, #ecf9ee, white);
 }
+
 .products_cart{
   display: block;
   height: 450px;
@@ -74,12 +77,15 @@ header>p {
 .product_image_img{
   padding-top: 80px;
 }
+
 .products_image{
   padding-bottom: 20px;
 }
+
 .cart_price{
   padding-top: 30px;
 }
+
 .product_title:link {  color: #3e3e3e;}
 .product_title:visited { text-decoration: none; color: #3e3e3e;}
 .product_title:active { text-decoration: none; color: #3e3e3e;}
