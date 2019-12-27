@@ -29,14 +29,12 @@
         <div class="col-6">
           <%= link_to @product, class:"product_title" do %>
             <% if @product.images? %>
-              <% @product.images.each  do |image|  %>
                 <div class="product_image_img">
-                  <%= image_tag(image.url(:large)) %>
+                  <%= image_tag @product.images.first.url(:large)%>
                 </div>
-              <% end %>
             <% else %>
               <div class="product_image_img">
-                <%= image_tag("http://knigoland.com.ua/image/cache/data/1/115907-360x562.jpg", {:style => "height:400px;"}) %>
+                <%= image_tag("http://knigoland.com.ua/image/cache/data/1/115907-360x562.jpg", {class:"simple_other_images"}) %>
               </div>
             <% end %>
           <% end %>
@@ -45,7 +43,6 @@
     </div>
   <% end %>
 </section>
-
 <div  class="background">
   <div class="row">
     <% @products.each do |product| %>
@@ -55,14 +52,12 @@
             <%= link_to product, class:"product_title" do %>
               <div class="products_image">
                 <% if product.images? %>
-                  <% product.images.each  do |image|  %>
-                    <div class="product_image_img">
-                      <%= image_tag(image.url(:medium)) %>
-                    </div>
-                  <% end %>
+                  <div class="product_image_img">
+                    <%= image_tag product.images.first.url(:medium) %>
+                  </div>
                 <% else %>
                   <div class="product_image_img">
-                    <%= image_tag("http://knigoland.com.ua/image/cache/data/1/111824-540x810.jpg", {:style => "height:250px;"}) %>
+                    <%= image_tag("http://knigoland.com.ua/image/cache/data/1/111824-540x810.jpg",{class:"other_images"}) %>
                   </div>
                 <% end %>
               </div>

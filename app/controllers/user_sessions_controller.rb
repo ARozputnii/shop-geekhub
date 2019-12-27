@@ -1,4 +1,6 @@
 class UserSessionsController < ApplicationController
+  before_action :check_on_present, except: :destroy
+
   def new
     @user = User.new
   end
@@ -18,3 +20,4 @@ class UserSessionsController < ApplicationController
     redirect_to root_path, notice: 'Logged out!'
   end
 end
+
