@@ -26,7 +26,7 @@
 
     <div class="field">
       <%= form.label :price %>
-      <%= form.text_area :price, class: "form-control"%>
+      <%= form.number_field :price, class: "form-control"%>
     </div>
 
     <div class="field">
@@ -45,7 +45,6 @@
         </li>
       <% end %>
     </div>
-
     <br>
     <div class="">
       <%= form.submit 'Submit', class: "btn btn-outline-secondary" %>
