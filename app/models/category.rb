@@ -13,6 +13,6 @@
 class Category < ApplicationRecord
   has_many :products
 
-  validates :title, :description, presence: true
-  validates :title, uniqueness: true
+  validates :title, uniqueness: true, length: {in: 3..15}
+  validates :description, length: {in: 5..100}
 end

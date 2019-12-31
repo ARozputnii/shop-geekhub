@@ -34,7 +34,7 @@ class Backoffice::CategoriesController < Backoffice::BackofficeController
       redirect_to admin: @category
       flash[:notice] = 'Category has been edited'
     else
-      format.html { render :edit }
+      render :edit
     end
   end
 
