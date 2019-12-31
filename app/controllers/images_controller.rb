@@ -3,13 +3,13 @@ class ImagesController < Backoffice::BackofficeController
 
   def create
     add_more_images(images_params[:images])
-    flash[:error] = 'Failed uploading images' unless @product.save
+    flash[:error] = "Failed uploading images" unless @product.save
     redirect_to :back
   end
 
   def destroy
     remove_image_at_index(params[:id].to_i)
-    flash[:error] = 'Failed deleting image' unless @product.save
+    flash[:error] = "Failed deleting image" unless @product.save
     redirect_to edit_admin_product_path(@product)
   end
 
@@ -33,6 +33,6 @@ class ImagesController < Backoffice::BackofficeController
   end
 
   def images_params
-    params.require(:product).permit(images: []) # allow nested params as array
+    params.require(:product).permit({images: []}) # allow nested params as array
   end
 end
