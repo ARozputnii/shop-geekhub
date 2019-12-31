@@ -1,7 +1,6 @@
 module ProductsHelper
-  def rand_image_to_heroky
-    arr = ['http://knigoland.com.ua/image/cache/data/1/111824-540x810.jpg',
-           'https://cfl.com.ua/book/image/9781292115986.jpg',
+  def rand_image_to_heroku
+    arr = ['https://cfl.com.ua/book/image/9781292115986.jpg',
            'https://cfl.com.ua/book/image/1308.jpg',
            'https://cfl.com.ua/book/image/lc1471521386.jpg',
            'https://cfl.com.ua/book/image/506.jpg',

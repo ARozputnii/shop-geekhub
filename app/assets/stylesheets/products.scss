@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 header {
-  background: url("https://images.wallpaperscraft.ru/image/paporotnik_list_rastenie_137021_1920x1080.jpg") center center no-repeat;
+  background: url("https://pics.photographer.ru/nonstop/pics/pictures/741/741459.jpg") center center no-repeat;
   color: #fff;
   text-align: center;
   background-size: cover;
@@ -26,7 +26,7 @@ header>p {
 }
 
 .subscribe {
-  background: rgba(0,0,0,0.65);
+  background: #65411e;
   display: table;
   padding: 10px 10px 10px 10px;
   margin: 0 auto 10px auto;
@@ -35,6 +35,7 @@ header>p {
 
 /*/////////////////*/
 .simle_product {
+  padding-top: 110px;
   display: block;
   height: 550px;
 }
@@ -55,6 +56,7 @@ header>p {
 }
 
 .simple_other_images{
+
   height: 400px;
 }
 
@@ -64,7 +66,8 @@ header>p {
 
 /*/////////////////*/
 .background{
-  background: linear-gradient(to bottom, white, #ecf9ee, white);
+  padding-top: 210px;
+  background: linear-gradient(to bottom, white, #f5d18d, #fff);
 }
 
 .products_cart{
@@ -91,6 +94,8 @@ header>p {
 .product_title:active { text-decoration: none; color: #3e3e3e;}
 .product_title:hover { color: black; text-decoration: none;}
 
-
+.pagination{
+  padding-top: 50px;
+}
 
 
