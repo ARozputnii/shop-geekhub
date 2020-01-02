@@ -13,7 +13,7 @@ module ProductsHelper
            'https://cfl.com.ua/book/image/access.jpg',
            'https://cfl.com.ua/book/image/1311.jpg',
            'https://cfl.com.ua/book/image/1354.jpg',
-           'https://cfl.com.ua/book/image/160.jpg',]
+           'https://cfl.com.ua/book/image/160.jpg']
     arr.sample
   end
 end
