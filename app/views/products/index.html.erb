@@ -43,7 +43,18 @@
     </div>
   <% end %>
 </section>
-<div  class="background">
+<section  class="background">
+  <div class="offset-md-1 dropright">
+    <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      sort by
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <%= link_to "price: low to higt", products_path(sort: 'asc'), class: 'dropdown-item' %>
+      <%= link_to "price: higt to low", products_path(sort: 'desc'), class: 'dropdown-item' %>
+      <%= link_to "new", products_path(sort: 'new_products'), class: 'dropdown-item' %>
+      <%= link_to "old", products_path(sort: 'old_products'), class: 'dropdown-item' %>
+    </div>
+  </div>
   <div class="row">
     <% @products.each do |product| %>
       <div class="col col-cm col-md-6 col-lg-4 col-xl-3">
@@ -82,4 +93,4 @@
   <div class="row justify-content-center pagination ">
     <%= will_paginate(@products, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: 'pagination-sm ') %>
   </div>
-</div>
+</section>

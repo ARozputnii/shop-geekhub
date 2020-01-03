@@ -27,4 +27,11 @@ class Product < ApplicationRecord
   validates :title, uniqueness: true, length: { in: 3..19 }
   validates :description, length: { in: 10..250 }
   validates :price, presence: true
+
+
+  scope :new_products, -> { order('created_at DESC') }
+  scope :old_products, -> { order('created_at ASC') }
+  scope :asc,          -> { order('price ASC') }
+  scope :desc,         -> { order('price DESC') }
+
 end
