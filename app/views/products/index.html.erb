@@ -49,10 +49,10 @@
       sort by
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <%= link_to "most popular",       products_path(sort: 'old_products'), class: 'dropdown-item' %>
+      <%= link_to "recently added",     products_path(sort: 'new_products'), class: 'dropdown-item' %>
       <%= link_to "price: low to higt", products_path(sort: 'asc'), class: 'dropdown-item' %>
       <%= link_to "price: higt to low", products_path(sort: 'desc'), class: 'dropdown-item' %>
-      <%= link_to "new", products_path(sort: 'new_products'), class: 'dropdown-item' %>
-      <%= link_to "old", products_path(sort: 'old_products'), class: 'dropdown-item' %>
     </div>
   </div>
   <div class="row">
