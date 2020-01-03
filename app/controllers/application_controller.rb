@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
   def check_on_present
-    current_user.present?
-    redirect_to root_path
+    redirect_to root_path if current_user.present?
   end
 end

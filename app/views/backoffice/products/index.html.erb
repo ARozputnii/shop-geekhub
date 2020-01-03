@@ -34,7 +34,7 @@
           <td>
             <%= link_to products.title, admin_product_path(products), class:'link'%>
           </td>
-          <td><%=h truncate(products.description, length: 50) %></td>
+          <td><%= products.description %></td>
           <td><%= products.price %></td>
           <td><%= link_to 'Show', admin_product_path(products) %>  |
             <%= link_to 'Edit', edit_admin_product_path(products) %>  |

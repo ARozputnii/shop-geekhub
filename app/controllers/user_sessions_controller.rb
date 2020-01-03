@@ -1,5 +1,5 @@
 class UserSessionsController < ApplicationController
-  #before_action :check_on_present, except: :destroy
+  before_action :check_on_present, except: :destroy
 
   def new
     @user = User.new
