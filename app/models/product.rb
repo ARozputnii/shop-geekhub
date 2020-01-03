@@ -22,6 +22,9 @@
 
 class Product < ApplicationRecord
   mount_uploaders :images, ImageUploader
+  has_rich_text :description
+
+
   belongs_to :category
 
   validates :title, uniqueness: true, length: { in: 3..19 }
