@@ -24,13 +24,11 @@ class Product < ApplicationRecord
   mount_uploaders :images, ImageUploader
   has_rich_text :description
 
-
   belongs_to :category
 
   validates :title, uniqueness: true, length: { in: 3..19 }
   validates :description, length: { in: 10..250 }
   validates :price, presence: true
-
 
   scope :new_products, -> { order('created_at DESC') }
   scope :old_products, -> { order('created_at ASC') }

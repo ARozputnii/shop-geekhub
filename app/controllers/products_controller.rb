@@ -1,5 +1,4 @@
 class ProductsController < ApplicationController
-
   def index
     @product  = Product.first
     @products = if params[:search]
@@ -19,12 +18,11 @@ class ProductsController < ApplicationController
                 elsif params[:sort] == 'manga_id'
                   Product.all.manga_id.paginate(page: params[:page], per_page: 8)
                 else
-                  Product.all.paginate( page: params[:page], per_page: 8)
+                  Product.all.paginate(page: params[:page], per_page: 8)
                 end
   end
 
   def show
     @product = Product.find(params[:id])
   end
-
 end
