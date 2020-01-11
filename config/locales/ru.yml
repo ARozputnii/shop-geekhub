@@ -4,3 +4,15 @@ ru:
       title: 'Новый продукт'
     edit:
       title: 'Редактирование продукта'
+    form:
+      delete: 'Удалить'
+      back: 'Назад'
+      submit: 'Изменить'
+    index:
+      image: 'Изображение'
+      category: 'Категория'
+      title: 'Заголовок'
+      description: 'Опис'
+      price: 'Цена'
+
+
