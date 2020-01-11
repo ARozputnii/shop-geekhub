@@ -2,7 +2,6 @@
   <%= form_with(model: [ :admin, @product ],local: true) do |form| %>
     <% if @product.errors.any? %>
       <div class="alert alert-danger">
-        <h2><%= pluralize(@product.errors.count, "error") %> prohibited this post from being saved:</h2>
         <ul>
           <% @product.errors.full_messages.each do |message| %>
             <li><%= message %></li>
@@ -10,11 +9,9 @@
         </ul>
       </div>
     <% end %>
-
     <div class="field">
-      <%= form.collection_select(:category_id, Category.all, :id, :title, class:'form-control' ) %>
+      <%= form.collection_select(:category_id, Category.all, :id, :title, class:'form-control') %>
     </div>
-
     <div class="field">
       <%= form.label :title %>
       <%= form.text_field :title, class: "form-control"%>
@@ -23,25 +20,23 @@
       <%= form.label :description %>
       <%= form.rich_text_area :description, class: "form-control"%>
     </div>
-
     <div class="field">
       <%= form.label :price %>
       <%= form.number_field :price, class: "form-control"%>
     </div>
-
     <div class="field">
       <%= form.file_field :images, multiple: true, class: "file"%>
     </div>
-
     <div class="upload-preview">
       <img />
     </div>
-
     <div>
       <% @product.images.each_with_index do |image, index| %>
         <li>
           <%= image_tag(image.url(:large)) %>
-          <%= link_to "Delete", admin_product_image_path(@product, index),method: :delete, data: { confirm: "Are you sure you want to delete this image?" }, class: "text-center" %>
+          <%= link_to "Delete", admin_product_image_path(@product, index), method: :delete,
+                      data: { confirm: "Are you sure you want to delete this image?" }, class: "text-center"
+          %>
         </li>
       <% end %>
     </div>
