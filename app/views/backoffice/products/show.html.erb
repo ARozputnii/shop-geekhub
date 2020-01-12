@@ -1,17 +1,19 @@
-<div>
-  <p>
+<div class="row show">
+  <div class="col-lg offset-lg-2">
     <% @product.images.each do |image| %>
       <%= image_tag(image.url(:large)) %>
     <% end %>
-  </p>
-  <%= @product.title %>
-  <p>Категория: <%= @product.category.title %></p>
-  <p>Описание:  <%= @product.description %></p>
-  <p>Стоимость: <%= @product.price %> грн.</p>
-
-  <button type="button" class="btn btn-outline-secondary">buy</button>
-  <%= link_to 'Edit', edit_admin_product_path(@product), class:"btn btn-outline-secondary" %>
-  <%= link_to 'Destroy', admin_product_path(@product), method: :delete,
-              data: { confirm: 'Are you sure?' }, class:"btn btn-outline-secondary" %>
-  <%= link_to 'back', admin_products_path, class:"btn btn-outline-secondary" %>
+    <div class="container row ">
+      <%= link_to t('link.edit'), edit_admin_product_path(@product), class:"btn btn-outline-secondary" %>
+      <%= link_to t('link.delete'), admin_product_path(@product), method: :delete,
+                  data: { confirm: t('confirm') }, class:"btn btn-outline-secondary" %>
+      <%= link_to t('link.back'), admin_products_path, class:"btn btn-outline-secondary" %>
+    </div>
+  </div>
+  <div class="col-lg">
+    <h4><b><%= @product.title %></b></h4>
+    <p><b><%= t('products.index.category') %>: <%= @product.category.title %></b></p>
+    <p><%= t('products.index.description') %>: <%= @product.description %></p>
+    <p>Стоимость: <%= @product.price %> грн.</p>
+  </div>
 </div>

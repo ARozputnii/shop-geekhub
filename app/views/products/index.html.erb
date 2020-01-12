@@ -3,7 +3,7 @@
   <h3>to put something in your life and let it snow snow snow</h3>
   <div class="form-inline subscribe">
     <%= form_tag(products_path, method: "get", id: "search-form") do %>
-      <%= text_field_tag :search, params[:search], placeholder: "Search", class:'form-control' %>
+      <%= text_field_tag :search, params[:search], placeholder: t('search'), class:'form-control' %>
       <button type="submit" class="btn btn-outline-light"><i class="fa fa-search"></i></button>
     <% end %>
   </div>
@@ -21,7 +21,7 @@
                 <h5>hot prise, buy now!</h5>
               </div>
               <div class="col-md">
-                <h5><%= @product.price %> грн</h5>
+                <h5><%= @product.price %></h5>
               </div>
             </div>
           </div>
