@@ -1,21 +1,21 @@
-en:
+ru:
   activerecord:
     models:
-      category: 'Category'
-      product: 'Product'
+      product: 'Продукт'
+      category: 'Категория'
     attributes:
       product:
-        title: 'Title'
-        description: 'Description'
-        image: 'Image'
-        price: 'Price'
+        title: 'Название'
+        description: "Описание"
+        price: "Цена"
+        images: "Изображение"
       category:
-        title: 'Title'
-        description: 'Description'
-        image: 'Image'
+        title: 'Заголовок'
+        description: 'Описание'
+        image: 'Изображение'
       user:
-        email: 'Email'
-        password: 'Password'
-        password_confirmation: 'Password confirmation'
-  navbar:
-    category: ""
+        first_name: 'Имя'
+        last_name: 'Фамилия'
+        email: 'Почта'
+        password: 'Пароль'
+        password_confirmation: 'Подтверждение пароля'

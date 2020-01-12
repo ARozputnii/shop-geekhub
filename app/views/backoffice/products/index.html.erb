@@ -12,7 +12,7 @@
           <% @categories.each do |categories| %>
             <tr>
               <td><%= link_to categories.title, admin_category_path(categories), class:'link'%></td>
-              <td><%=h truncate(categories.description, length: 50) %></td>
+              <td><%= h truncate(categories.description, length: 50) %></td>
               <td><%= link_to t('link.show'), admin_category_path(categories) %>  |
                 <%= link_to t('link.edit'), edit_admin_category_path(categories) %>  |
                 <%= link_to t('link.delete'), admin_category_path(categories), method: :delete,

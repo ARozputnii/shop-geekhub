@@ -56,6 +56,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'annotate', '~> 3.0', '>= 3.0.3' # для роботы с дб моделями
 gem 'bootstrap', '~> 4.4.1'
 gem 'bootstrap-will_paginate', '~> 1.0'
+gem 'will-paginate-i18n', '~> 0.1.15'
 gem 'byebug'
 gem 'carrierwave', '~> 2.0'
 gem 'faker', '~> 2.7'

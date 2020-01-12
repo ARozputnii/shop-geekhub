@@ -10,7 +10,7 @@
     <ul class="navbar-nav mr-5">
       <li class="nav-item">
         <% if I18n.locale == :ru  %>
-          <%= link_to 'RU', url_for(locale: :en), class: 'nav-link' %>
+          <%= link_to 'Рус', url_for(locale: :en), class: 'nav-link' %>
         <% else %>
           <%= link_to 'EN', url_for(locale: :ru), class: 'nav-link' %>
         <% end %>
