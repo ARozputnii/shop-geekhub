@@ -7,6 +7,19 @@ ru:
     new_product: 'Добавить продукт'
     new_category: 'Добавить категорию'
     buy: 'Купить'
+
+  navbar:
+    signup: 'Регистрация'
+    login: 'Войти'
+    logout: 'Выйти'
+    adminpanel: 'Админ Панель'
+    category: 'Категории'
+    all_product: 'Все категории'
+
+  category:
+    edit_category: 'Редактирование категории'
+    new_category: 'Новая категория'
+
   products:
     new:
       title: 'Новый продукт'
@@ -22,8 +35,8 @@ ru:
       price: 'Цена'
       link: 'Ссылка'
 
-
-
   confirm: 'Вы уверены?'
   search: 'Поиск'
+  email: 'Почта'
+  password: 'Пароль'
 

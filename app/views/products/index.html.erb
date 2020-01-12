@@ -44,15 +44,29 @@
   <% end %>
 </section>
 <section  class="background">
-  <div class="offset-md-1 dropright">
-    <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      sort by
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <%= link_to "most popular",       products_path(sort: 'old_products'), class: 'dropdown-item' %>
-      <%= link_to "recently added",     products_path(sort: 'new_products'), class: 'dropdown-item' %>
-      <%= link_to "price: low to higt", products_path(sort: 'asc'), class: 'dropdown-item' %>
-      <%= link_to "price: higt to low", products_path(sort: 'desc'), class: 'dropdown-item' %>
+  <div class="row">
+    <div class="offset-md-1 dropright">
+      <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        sort by
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <%= link_to "most popular",       products_path(sort: 'old_products'), class: 'dropdown-item' %>
+        <%= link_to "recently added",     products_path(sort: 'new_products'), class: 'dropdown-item' %>
+        <%= link_to "price: low to higt", products_path(sort: 'asc'), class: 'dropdown-item' %>
+        <%= link_to "price: higt to low", products_path(sort: 'desc'), class: 'dropdown-item' %>
+      </div>
+    </div>
+    <div class="offset-md-1 dropright">
+      <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <%= t('navbar.category') %>
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <%= link_to t('navbar.all_product'), products_path, class: "dropdown-item" %>
+        <div class="dropdown-divider"></div>
+        <%= link_to "Book",     products_path(sort: 'book_id'),     class: 'dropdown-item' %>
+        <%= link_to 'Magazine', products_path(sort: 'magazine_id'), class: "dropdown-item" %>
+        <%= link_to 'Manga',    products_path(sort: 'manga_id'),    class: "dropdown-item" %>
+      </div>
     </div>
   </div>
   <div class="row">

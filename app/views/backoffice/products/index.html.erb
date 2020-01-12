@@ -16,7 +16,7 @@
               <td><%= link_to t('link.show'), admin_category_path(categories) %>  |
                 <%= link_to t('link.edit'), edit_admin_category_path(categories) %>  |
                 <%= link_to t('link.delete'), admin_category_path(categories), method: :delete,
-                            data: { confirm: 'Are you sure?' } %></td>
+                            data: { confirm: t('confirm') } %></td>
             </tr>
           <% end %>
         </ul>
