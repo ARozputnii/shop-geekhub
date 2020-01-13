@@ -61,7 +61,7 @@
           <td><%= link_to t('link.show'), admin_product_path(products) %>  |
             <%= link_to t('link.edit'), edit_admin_product_path(products) %>  |
             <%= link_to t('link.delete'), admin_product_path(products), method: :delete,
-                        data: { confirm: 'Are you sure?' } %></td>
+                        data: { confirm: t('confirm') } %></td>
         </tr>
       <% end %>
     </ul>

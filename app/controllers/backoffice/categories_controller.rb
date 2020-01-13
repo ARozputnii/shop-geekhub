@@ -2,11 +2,7 @@ class Backoffice::CategoriesController < Backoffice::BackofficeController
   before_action :find_category, only: %i[show edit update destroy]
 
   def index
-    @categories = if params[:search]
-                    Category.search(params[:search]).order(created_at: :desc).paginate(page: params[:page], per_page: 8)
-                  else
-                    Category.all.order(created_at: :desc).paginate(page: params[:page], per_page: 8)
-                  end
+    @products = Product.all.order(created_at: :desc).paginate(page: params[:page], per_page: 8)
   end
 
   def show
@@ -20,8 +16,8 @@ class Backoffice::CategoriesController < Backoffice::BackofficeController
   def create
     @category = Category.new(category_params)
     if @category.save
-      redirect_to admin: @category
-      flash[:notice] = 'Category has been added'
+      redirect_to admin_products_path
+      flash[:notice] = t('controllers.categories.created')
     else
       render :new
     end
@@ -31,8 +27,8 @@ class Backoffice::CategoriesController < Backoffice::BackofficeController
 
   def update
     if @category.update_attributes(category_params)
-      redirect_to admin: @category
-      flash[:notice] = 'Category has been edited'
+      redirect_to admin_products_path
+      flash[:notice] = t('controllers.categories.edited')
     else
       render :edit
     end
@@ -40,7 +36,7 @@ class Backoffice::CategoriesController < Backoffice::BackofficeController
 
   def destroy
     @category.destroy
-    redirect_to admin_categories_path, notice: 'Category was successfully destroyed.'
+    redirect_to admin_products_path, notice: t('controllers.categories.destroyed')
   end
 
   private
