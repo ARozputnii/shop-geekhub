@@ -34,7 +34,4 @@ class Product < ApplicationRecord
   scope :old_products, -> { order('created_at ASC') }
   scope :asc,          -> { order('price ASC') }
   scope :desc,         -> { order('price DESC') }
-  scope :book_id,      -> { where(category_id: 1) }
-  scope :magazine_id,  -> { where(category_id: 2) }
-  scope :manga_id,     -> { where(category_id: 3) }
 end
