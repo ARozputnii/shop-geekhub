@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   scope '(:locale)', locale: /#{I18n.available_locales.join('|')}/ do
     root 'products#index'
 
@@ -18,6 +17,5 @@ Rails.application.routes.draw do
 
     get 'login' => 'user_sessions#new', :as => :login
     post 'logout' => 'user_sessions#destroy', :as => :logout
-
   end
 end

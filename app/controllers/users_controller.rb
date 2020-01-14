@@ -15,6 +15,7 @@ class UsersController < ApplicationController
       render :new
     end
   end
+
   def destroy
     @user.destroy
     redirect_to users_url, notice: t('controllers.users.destroyed')
