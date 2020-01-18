@@ -21,6 +21,7 @@
 #
 
 class Product < ApplicationRecord
+  has_many :comments
   mount_uploaders :images, ImageUploader
   has_rich_text :description
 
