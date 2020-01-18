@@ -30,7 +30,7 @@
           <%= link_to @product, class:"product_title" do %>
             <% if @product.images? %>
                 <div class="product_image_img">
-                  <%= image_tag @product.images.first.url(:large)%>
+                  <%= image_tag @product.images.first.url(:large), {class:"simple_other_images"}%>
                 </div>
             <% else %>
               <div class="product_image_img">
@@ -84,7 +84,7 @@
                   </div>
                 <% else %>
                   <div class="product_image_img">
-                    <%= image_tag (rand_image_to_heroku), {class:"other_images"} %>
+                    <%= image_tag rand_image_to_heroku, class:"other_images" %>
                   </div>
                 <% end %>
               </div>
