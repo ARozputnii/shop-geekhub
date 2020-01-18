@@ -5,6 +5,7 @@
 #  id         :bigint           not null, primary key
 #  body       :text
 #  commenter  :string
+#  rating     :float
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  product_id :bigint           not null

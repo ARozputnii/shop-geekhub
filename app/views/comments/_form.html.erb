@@ -1,4 +1,5 @@
 <%= form_with(model: [ @product, @product.comments.build ], local: true) do |form| %>
+
   <p>
     <%= form.label :commenter %><br>
     <%= form.text_field :commenter %>
@@ -8,6 +9,6 @@
     <%= form.text_area :body %>
   </p>
   <p>
-    <%= form.submit %>
+    <%= form.submit t('products.form.submit') %>
   </p>
 <% end %>

@@ -1,13 +1,15 @@
-<%= form_with(model: [ @product, @product.comments.build ], local: true) do |form| %>
-  <p>
-    <%= form.label t('activerecord.attributes.comment.commenter') %><br>
-    <%= form.text_field :commenter %>
-  </p>
-  <p>
-    <%= form.label t('activerecord.attributes.comment.body') %><br>
-    <%= form.text_area :body %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
+<div>
+  <%= form_with(model: [ @product, @product.comments.build ], local: true) do |form| %>
+    <p>
+      <%= form.label t('activerecord.attributes.comment.commenter') %><br>
+      <%= form.text_field :commenter %>
+    </p>
+    <p>
+      <%= form.label t('activerecord.attributes.comment.body') %><br>
+      <%= form.text_area :body %>
+    </p>
+    <p>
+      <%= form.submit t('products.form.submit') %>
+    </p>
+  <% end %>
+</div>
