@@ -1,0 +1,16 @@
+<div>
+  <br>
+  <h2>Comments</h2>
+  <% @product.comments.each do |comment| %>
+    <p>
+      <strong>Name:</strong>
+      <%= comment.commenter %>
+    </p>
+
+    <p>
+      <strong>Comment:</strong>
+      <%= comment.body %>
+    </p>
+  <% end %>
+  <br>
+</div>

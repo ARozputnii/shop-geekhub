@@ -1,19 +1,45 @@
-<div class="row show">
-  <div class="col-lg offset-lg-2">
-    <% @product.images.each do |image| %>
-      <%= image_tag(image.url(:large)) %>
-    <% end %>
-    <div class="container row ">
-      <%= link_to t('link.edit'), edit_admin_product_path(@product), class:"btn btn-outline-secondary" %>
-      <%= link_to t('link.delete'), admin_product_path(@product), method: :delete,
-                  data: { confirm: t('confirm') }, class:"btn btn-outline-secondary" %>
-      <%= link_to t('link.back'), admin_products_path, class:"btn btn-outline-secondary" %>
+<div class="background_show">
+  <div class="offset-2">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <% if @product.images? %>
+          <% @product.images.each_with_index do |image, index| %>
+            <div class="carousel-item <%= 'active' if index == 0 %>" >
+              <%= image_tag(image.url, id: index, class: 'd-block carousel__image') %>
+            </div>
+          <% end %>
+        <% else %>
+          <div class="carousel-item active">
+            <%= image_tag rand_image_to_heroku, class: 'carousel__image' %>
+          </div>
+          <div class="carousel-item">
+            <%= image_tag rand_image_to_heroku, class: 'carousel__image' %>
+          </div>
+          <div class="carousel-item">
+            <%= image_tag rand_image_to_heroku, class: 'carousel__image' %>
+          </div>
+        <% end %>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">←</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">→</span>
+      </a>
     </div>
-  </div>
-  <div class="col-lg">
-    <h4><b><%= @product.title %></b></h4>
-    <p><b><%= t('products.index.category') %>: <%= @product.category.title %></b></p>
-    <p><%= t('products.index.description') %>: <%= @product.description %></p>
-    <p>Стоимость: <%= @product.price %> грн.</p>
+    <h2><%= @product.title %></h2>
+    <div class="row ">
+      <div class="col-sm-2"><%= t('products.index.category') %>: <%= @product.category.title %></div>
+      <div class="col-sm-2"><%= t('products.index.price') %>: <%= @product.price %></div>
+    </div>
+    <p class="description"><%= t('products.index.description') %>:  <%= @product.description %></p>
+    <div class="row">
+      <button type="button" class="btn btn-outline-secondary"><%= t('link.buy') %></button>
+      <%= link_to t('link.back'), products_path, class:"btn btn-outline-secondary" %>
+    </div>
+    <%= render 'backoffice/comments/comments' %>
+    <%= render 'backoffice/comments/form' %>
   </div>
 </div>
