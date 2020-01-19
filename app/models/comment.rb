@@ -25,4 +25,11 @@ class Comment < ApplicationRecord
   validates :commenter, presence: true, length: { minimum: 2 }
   validates :body,      presence: true, length: { minimum: 5 }
 
+  STARS = [
+      [5, 'gorgeous'],
+      [4, 'good'],
+      [3, 'regular'],
+      [2, 'poor'],
+      [1, 'bad']
+  ]
 end
