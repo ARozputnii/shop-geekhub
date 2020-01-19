@@ -20,5 +20,6 @@ ru:
         password: 'Пароль'
         password_confirmation: 'Подтверждение пароля'
       comment:
+        rating: 'Рейтинг'
         commenter: 'Автор'
         body: 'Текст'

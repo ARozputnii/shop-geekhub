@@ -30,3 +30,16 @@ end
                    category_id: 3
                  }])
 end
+
+30.times do
+  User.create([{ email: 'user' + rand(100..400).to_s + '@example.com', password: 'Userexample' }])
+end
+
+60.times do
+  Comment.create([{
+                      product_id: rand(1..30),
+                      user_id: rand(1..30),
+                      rating: rand(1..5),
+                      body: Faker::Quotes::Shakespeare.king_richard_iii_quote
+                  }])
+end

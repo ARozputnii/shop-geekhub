@@ -1,24 +1,16 @@
-<div>
-  <br>
+<% @product.comments.each do |comment| %>
+  <p>
+    <%= comment.rating.to_i.times do %>
+      <small class="fa fa-star"></small>
+    <% end %>
+  </p>
 
-  <h2>Comments</h2>
-  <% @product.comments.each do |comment| %>
+  <p>
+    <strong><%= t('activerecord.attributes.user.first_name') %>:</strong>
+    <%= comment.commenter %>
+  </p>
 
-     <p>
-       <%= comment.rating.to_i.times do %>
-         <small class="fa fa-star"></small>
-       <% end %>
-     </p>
-
-    <p>
-      <strong>Name:</strong>
-      <%= comment.commenter %>
-    </p>
-
-    <p>
-      <strong>Comment:</strong>
-      <%= comment.body %>
-    </p>
-  <% end %>
-  <br>
-</div>
+  <p>
+    <%= comment.body %>
+  </p>
+<% end %>

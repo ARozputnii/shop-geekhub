@@ -20,5 +20,6 @@ en:
         password: 'Password'
         password_confirmation: 'Password Confirmation'
       comment:
+        rating: 'Rating'
         commenter: 'Name'
         body: 'Text'
