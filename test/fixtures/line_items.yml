@@ -3,6 +3,7 @@
 # Table name: line_items
 #
 #  id         :bigint           not null, primary key
+#  quantity   :integer          default(1)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  cart_id    :bigint           not null

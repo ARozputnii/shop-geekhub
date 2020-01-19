@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-  resources :carts
-  resources :line_items
   scope '(:locale)', locale: /#{I18n.available_locales.join('|')}/ do
     root 'products#index'
-
+    resources :carts
+    resources :line_items
     resources :products, only: %i[index show] do
       resources :comments
     end
