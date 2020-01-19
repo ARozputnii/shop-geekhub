@@ -30,10 +30,30 @@
         <% end %>
       </li>
       <li class="nav-item">
-        <%= link_to line_items_path(product_id: @product), class:'nav-link' do %>
+      <!--  <%#= link_to line_items_path(product_id: @product), class:'nav-link' do %>
           <i class="fas fa-shopping-cart"></i>
-        <% end %>
+        <%# end %>-->
+        <!-- Button trigger modal -->
+
       </li>
+      <button type="button" class="nav-item btn btn-outline-light" data-toggle="modal" data-target="#staticBackdrop">
+        <i class="fas fa-shopping-cart"></i>
+      </button>
     </ul>
   </div>
 </nav>
+
+
+
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-footer">
+        cart
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <button type="button" class="btn btn-primary">Buy</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
