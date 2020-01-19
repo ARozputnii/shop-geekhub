@@ -35,10 +35,11 @@ end
   User.create([{ email: 'user' + rand(100..400).to_s + '@example.com', password: 'Userexample' }])
 end
 
-60.times do
+
+80.times do
   Comment.create([{
                       product_id: rand(1..30),
-                      user_id: rand(1..30),
+                      commenter: Faker::Name.name,
                       rating: rand(1..5),
                       body: Faker::Quotes::Shakespeare.king_richard_iii_quote
                   }])

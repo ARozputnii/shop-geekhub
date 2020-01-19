@@ -28,8 +28,10 @@ class Product < ApplicationRecord
   belongs_to :category
 
   #validates :title, uniqueness: true, length: { in: 3..19 }
+=begin
   validates :description, length: { in: 10..250 }
   validates :price, presence: true
+=end
 
   scope :new_products, -> { order('created_at DESC') }
   scope :old_products, -> { order('created_at ASC') }
