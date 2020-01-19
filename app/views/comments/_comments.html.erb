@@ -1,0 +1,16 @@
+<% @product.comments.each do |comment| %>
+  <p>
+    <%= comment.rating.to_i.times do %>
+      <small class="fa fa-star"></small>
+    <% end %>
+  </p>
+
+  <p>
+    <strong><%= t('activerecord.attributes.user.first_name') %>:</strong>
+    <%= comment.commenter %>
+  </p>
+
+  <p>
+    <%= comment.body %>
+  </p>
+<% end %>

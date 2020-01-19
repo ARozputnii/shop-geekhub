@@ -34,7 +34,7 @@
       <% @product.images.each_with_index do |image, index| %>
         <li>
           <%= image_tag(image.url(:large)) %>
-          <%= link_to "Delete", admin_product_image_path(@product, index), method: :delete,
+          <%= link_to t('products.form.delete'), admin_product_image_path(@product, index), method: :delete,
                       data: { confirm: "Are you sure you want to delete this image?" }, class: "text-center"
           %>
         </li>
@@ -42,8 +42,8 @@
     </div>
     <br>
     <div class="">
-      <%= form.submit 'Submit', class: "btn btn-outline-secondary" %>
-      <%= link_to 'back', admin_products_path,class:"btn btn-outline-secondary"  %>
+      <%= form.submit t('products.form.submit'), class: "btn btn-outline-secondary" %>
+      <%= link_to t('products.form.back'), admin_products_path,class:"btn btn-outline-secondary"  %>
     </div>
   <% end %>
 </div>

@@ -1,15 +1,14 @@
- <h3>
-   <%= @category.title %>
- </h3>
+ <h3><%= @category.title %></h3>
+ <p><%= @category.description %></p>
  <div class="row">
   <div class="link">
-    <%= link_to 'Edit', admin_category_path, class:"btn btn-outline-secondary" %>
+    <%= link_to t('link.edit'), edit_admin_category_path, class:"btn btn-outline-secondary" %>
    </div>
    <div class="link">
-     <%= link_to 'Destroy', admin_category_path, method: :delete,
-                data: { confirm: 'Are you sure?' }, class:"btn btn-outline-secondary" %>
+     <%= link_to t('link.delete'), admin_category_path, method: :delete,
+                data: { confirm: t('confirm') }, class:"btn btn-outline-secondary" %>
    </div>
    <div class="link">
-    <%= link_to 'back', admin_products_path, class:"btn btn-outline-secondary" %>
+    <%= link_to t('link.back'), admin_products_path, class:"btn btn-outline-secondary" %>
    </div>
 </div>

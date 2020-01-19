@@ -1,21 +1,47 @@
 <div class="background_show">
   <div class="offset-2">
-    <% if @product.images? %>
-      <% @product.images.each do |image| %>
-        <%= image_tag(image.url(:large)) %>
-      <% end %>
-    <% else %>
-      <%= image_tag rand_image_to_heroku%>
-    <% end %>
-    <div class="justify-content-center"><h2><%= @product.title %></h2></div>
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <% if @product.images? %>
+          <% @product.images.each_with_index do |image, index| %>
+            <div class="carousel-item <%= 'active' if index == 0 %>" >
+              <%= image_tag(image.url, id: index, class: 'd-block carousel__image') %>
+            </div>
+          <% end %>
+        <% else %>
+          <div class="carousel-item active">
+            <%= image_tag rand_image_to_heroku, class: 'carousel__image' %>
+          </div>
+          <div class="carousel-item">
+            <%= image_tag rand_image_to_heroku, class: 'carousel__image' %>
+          </div>
+          <div class="carousel-item">
+            <%= image_tag rand_image_to_heroku, class: 'carousel__image' %>
+          </div>
+        <% end %>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">←</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">→</span>
+      </a>
+    </div>
+    <h2><%= @product.title %></h2>
     <div class="row ">
-      <div class="col-sm-2">Категория: <%= @product.category.title %></div>
-      <div class="col-sm-2">Стоимость: <%= @product.price %> грн.</div>
+      <div class="col-sm-2"><%= t('products.index.category') %>: <%= @product.category.title %></div>
+      <div class="col-sm-2"> <small class="fa fa-star star_show"></small><%= count_rating(@product).round(1) %></div>
+      <div class="col-sm-2"><%= t('products.index.price') %>: <%= @product.price %></div>
     </div>
-    <p class="description">Описание:  <%= @product.description %></p>
+    <p class="description"><%= t('products.index.description') %>:  <%= @product.description %></p>
     <div class="row">
-      <button type="button" class="btn btn-outline-secondary">Купить</button>
-      <%= link_to 'back', products_path, class:"btn btn-outline-secondary" %>
+      <button type="button" class="btn btn-outline-secondary"><%= t('link.buy') %></button>
+      <%= link_to t('link.back'), products_path, class:"btn btn-outline-secondary" %>
     </div>
+    <%= render 'comments/form' %>
+    <br>
+    <%= render 'comments/comments' %>
   </div>
 </div>

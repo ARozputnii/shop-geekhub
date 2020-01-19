@@ -1,0 +1,25 @@
+<% @product.comments.each do |comment| %>
+  <p>
+    <%= comment.rating.to_i.times do %>
+      <small class="fa fa-star"></small>
+    <% end %>
+  </p>
+
+  <p>
+    <strong><%= t('activerecord.attributes.comment.commenter') %></strong>
+    <%= comment.commenter %>
+  </p>
+
+  <p>
+    <strong><%= t('activerecord.attributes.comment.body') %></strong>
+    <%= comment.body %>
+  </p>
+
+  <p>
+    <%= link_to t('link.delete'), [comment.product, comment],
+                method: :delete,
+                data: { confirm: t('confirm') },
+                class:"btn btn-outline-secondary"%>
+  </p>
+<% end %>
+<br>

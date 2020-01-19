@@ -56,9 +56,10 @@ header>p {
 }
 
 .simple_other_images{
-
+  width: 300px;
   height: 400px;
 }
+
 
 .other_images{
   height: 280px;
@@ -79,11 +80,11 @@ header>p {
   margin-bottom: 40px;
 }
 .product_image_img{
-  padding-top: 80px;
+  padding-top: 50px;
 }
 
 .products_image{
-  padding-bottom: 20px;
+  padding-bottom: 30px;
 }
 
 .cart_price{
@@ -99,4 +100,88 @@ header>p {
   padding-top: 50px;
 }
 
+/*show*/
 
+.carousel__image{
+  width: 400px;
+  height: 500px;
+}
+.carousel{
+  width: 400px;
+  height: 500px;
+}
+.star_show{
+  color: #d1c517;
+  font-size: 18px;
+}
+
+/*sprite with stars*/
+#reviewStars-input input:checked ~ label, #reviewStars-input label, #reviewStars-input label:hover, #reviewStars-input label:hover ~ label {
+  background: url('http://positivecrash.com/wp-content/uploads/ico-s71a7fdede6.png') no-repeat;
+}
+
+#reviewStars-input {
+
+  /*fix floating problems*/
+  overflow: hidden;
+  *zoom: 1;
+  /*end of fix floating problems*/
+
+  position: relative;
+  float: left;
+}
+
+#reviewStars-input input {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+
+  width: 43px;
+  height: 40px;
+
+  position: absolute;
+  top: 0;
+  z-index: 0;
+}
+
+#reviewStars-input input:checked ~ label {
+  background-position: 0 -40px;
+  height: 40px;
+  width: 43px;
+}
+
+#reviewStars-input label {
+  background-position: 0 0;
+  height: 40px;
+  width: 43px;
+  float: right;
+  cursor: pointer;
+  margin-right: 40px;
+
+  position: relative;
+  z-index: 1;
+}
+
+#reviewStars-input label:hover, #reviewStars-input label:hover ~ label {
+  background-position: 0 -40px;
+  height: 40px;
+  width: 43px;
+}
+
+#reviewStars-input #star-0 {
+  left: 0px;
+}
+#reviewStars-input #star-1 {
+  left: 53px;
+}
+#reviewStars-input #star-2 {
+  left: 106px;
+}
+#reviewStars-input #star-3 {
+  left: 159px;
+}
+#reviewStars-input #star-4 {
+  left: 212px;
+}
+#reviewStars-input #star-5 {
+  left: 265px;
+}

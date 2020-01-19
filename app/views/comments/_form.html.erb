@@ -1,0 +1,20 @@
+<%= form_with(model: [ @product, @product.comments.build ], local: true) do |form| %>
+  <div id="reviewStars-input">
+    <%= collection_radio_buttons(:comment, :rating, Comment::STARS, :first, :second) do |b| %>
+      <%= b.radio_button %>
+      <%= b.label( title: b.text ) %>
+    <% end %>
+  </div>
+  <br><br><br>
+  <p>
+    <%= form.label :commenter %><br>
+    <%= form.text_field :commenter %>
+  </p>
+  <p>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %>
+  </p>
+  <p>
+    <%= form.submit t('products.form.submit') %>
+  </p>
+<% end %>

@@ -8,15 +8,15 @@ class UserSessionsController < ApplicationController
   def create
     @user = login(params[:email], params[:password])
     if @user
-      redirect_to root_path, notice: 'Login successful'
+      redirect_to root_path, notice: t('controllers.sessions_controller.logged_in')
     else
-      flash.now[:alert] = 'Email or password was invalid'
+      flash.now[:alert] = t('controllers.sessions_controller.failed')
       render :new
     end
   end
 
   def destroy
     logout
-    redirect_to root_path, notice: 'Logged out!'
+    redirect_to root_path, notice: t('controllers.sessions_controller.logget_out')
   end
 end

@@ -1,6 +1,68 @@
 en:
+  link:
+    show: 'show'
+    edit: 'edit'
+    delete: 'delete'
+    back: 'back'
+    new_product: 'New product'
+    new_category: 'New category'
+    buy: 'buy'
+
+  navbar:
+    signup: 'Signup'
+    login: 'Login'
+    logout: 'Logout'
+    adminpanel: 'Admin Panel'
+    category: 'Category'
+    all_product: 'All product'
+
+  category:
+    edit_category: 'Edit category'
+    new_category: 'New category'
+
   products:
     new:
-      title: 'New Product'
+      title: 'New product'
     edit:
-      title: 'Editing Product'
+      title: 'Edit product'
+    form:
+      submit: 'submit'
+    index:
+      image: 'Image'
+      category: 'Category'
+      title: 'Title'
+      description: 'Description'
+      price: 'Price'
+      link: 'Link'
+      h1: 'Welcome to the book shop GH'
+      h3: 'Rob and buy the best books in our club'
+      h5: 'Рot price, buy now!'
+      grn: '₴'
+    sort:
+      sort: 'sort by'
+      most_popular: 'most popular'
+      recently_added: 'recently added'
+      low_to_high: 'low to high'
+      high_to_low: 'high to low'
+      best: 'best'
+  controllers:
+    categories:
+      created: 'Category has been created'
+      edited: 'Category has been edited'
+      destroyed: 'Category has been destroyed'
+    products:
+      created: 'Product has been created'
+      edited: 'Product has been edited'
+      destroyed: 'Product has been destroyed'
+    sessions_controller:
+      logged_in: 'Login successful'
+      failed: 'Email or password was invalid'
+      logget_out: 'Logged out!'
+    users:
+      create: 'Welcome! Now you can log in!'
+      destroyed: 'User was destroyed'
+  confirm: 'Are you sure'
+  search: 'search'
+  email: 'Email'
+  password: 'Password'
+

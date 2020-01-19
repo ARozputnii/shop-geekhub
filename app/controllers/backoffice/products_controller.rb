@@ -7,7 +7,12 @@ class Backoffice::ProductsController < Backoffice::BackofficeController
                 else
                   Product.all.order(created_at: :desc).paginate(page: params[:page], per_page: 14)
                 end
-    @categories = Category.all
+
+    @categories = if params[:search]
+                    Category.search(params[:search]).order(created_at: :desc).paginate(page: params[:page], per_page: 8)
+                  else
+                    Category.all.order(created_at: :desc).paginate(page: params[:page], per_page: 8)
+                  end
   end
 
   def show; end
@@ -20,7 +25,7 @@ class Backoffice::ProductsController < Backoffice::BackofficeController
     @product = Product.new(product_params)
     if @product.save
       redirect_to admin: @product
-      flash[:notice] = 'Product has been added'
+      flash[:notice] = t('controllers.products.created')
     else
       render :new
     end
@@ -31,7 +36,7 @@ class Backoffice::ProductsController < Backoffice::BackofficeController
   def update
     if @product.update_attributes(product_params)
       redirect_to admin: @product
-      flash[:notice] = 'Product has been edited'
+      flash[:notice] = t('controllers.products.edited')
     else
       render :edit
     end
@@ -39,7 +44,7 @@ class Backoffice::ProductsController < Backoffice::BackofficeController
 
   def destroy
     @product.destroy
-    redirect_to admin_products_path, notice: 'Product was successfully destroyed.'
+    redirect_to admin_products_path, notice: t('controllers.products.destroyed')
   end
 
   private

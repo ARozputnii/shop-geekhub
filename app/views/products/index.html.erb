@@ -1,9 +1,9 @@
 <header>
-  <h1>If you Wanna be Happy</h1>
-  <h3>to put something in your life and let it snow snow snow</h3>
+  <h1><%= t('products.index.h1') %></h1>
+  <h3><%= t('products.index.h3') %></h3>
   <div class="form-inline subscribe">
     <%= form_tag(products_path, method: "get", id: "search-form") do %>
-      <%= text_field_tag :search, params[:search], placeholder: "Search", class:'form-control' %>
+      <%= text_field_tag :search, params[:search], placeholder: t('search'), class:'form-control' %>
       <button type="submit" class="btn btn-outline-light"><i class="fa fa-search"></i></button>
     <% end %>
   </div>
@@ -18,10 +18,10 @@
             <p class="card_text col-md-8"><%= @product.description %></p>
             <div class="row col cart_price">
               <div class="col-md">
-                <h5>hot prise, buy now!</h5>
+                <h5><%= t('products.index.h5') %></h5>
               </div>
               <div class="col-md">
-                <h5><%= @product.price %> грн</h5>
+                <h5><%= @product.price %> <%= t('products.index.grn')%></h5>
               </div>
             </div>
           </div>
@@ -30,7 +30,7 @@
           <%= link_to @product, class:"product_title" do %>
             <% if @product.images? %>
                 <div class="product_image_img">
-                  <%= image_tag @product.images.first.url(:large)%>
+                  <%= image_tag @product.images.first.url(:large), {class:"simple_other_images"}%>
                 </div>
             <% else %>
               <div class="product_image_img">
@@ -44,15 +44,32 @@
   <% end %>
 </section>
 <section  class="background">
-  <div class="offset-md-1 dropright">
-    <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      sort by
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <%= link_to "most popular",       products_path(sort: 'old_products'), class: 'dropdown-item' %>
-      <%= link_to "recently added",     products_path(sort: 'new_products'), class: 'dropdown-item' %>
-      <%= link_to "price: low to higt", products_path(sort: 'asc'), class: 'dropdown-item' %>
-      <%= link_to "price: higt to low", products_path(sort: 'desc'), class: 'dropdown-item' %>
+  <div class="row">
+    <div class="offset-md-1 dropright">
+      <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <%= t('products.sort.sort') %>
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <%= link_to t('products.sort.most_popular')  ,  products_path(sort: 'old_products'), class: 'dropdown-item' %>
+        <%= link_to t('products.sort.recently_added'),  products_path(sort: 'new_products'), class: 'dropdown-item' %>
+        <%= link_to t('products.sort.low_to_high') ,    products_path(sort: 'asc'), class: 'dropdown-item' %>
+        <%= link_to t('products.sort.high_to_low') ,    products_path(sort: 'desc'), class: 'dropdown-item' %>
+        <%= link_to t('products.sort.best'), products_path(sort: 'best_star'), class:'dropdown-item' %>
+      </div>
+    </div>
+    <div class="offset-md-1 dropright">
+      <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <%= t('navbar.category') %>
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <% @categories&.each do |category| %>
+          <%= link_to products_path(category: category), class:'dropdown-item' do %>
+            <span>
+              <%= category&.title %>
+            </span>
+          <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
   <div class="row">
@@ -68,7 +85,7 @@
                   </div>
                 <% else %>
                   <div class="product_image_img">
-                    <%= image_tag (rand_image_to_heroku), {class:"other_images"} %>
+                    <%= image_tag rand_image_to_heroku, class:"other_images" %>
                   </div>
                 <% end %>
               </div>
@@ -77,12 +94,12 @@
               </div>
             <% end %>
             <div class="row cart_price">
-              <div class="col-7">
-                <h5><%= product.price %> грн</h5>
+              <div class="col-">
+                <h5><%= product.price %> <%= t('products.index.grn')%></h5>
               </div>
               <div class="col">
                 <i class="fas fa-shopping-cart"></i>
-                <i class="far fa-heart"></i>
+                <i class="fa fa-star"></i><%= count_rating(product).round(1) %>
               </div>
             </div>
           </div>

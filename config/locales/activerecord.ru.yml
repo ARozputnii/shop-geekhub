@@ -14,6 +14,12 @@ ru:
         description: 'Описание'
         image: 'Изображение'
       user:
+        first_name: 'Имя'
+        last_name: 'Фамилия'
         email: 'Почта'
         password: 'Пароль'
         password_confirmation: 'Подтверждение пароля'
+      comment:
+        rating: 'Рейтинг'
+        commenter: 'Автор'
+        body: 'Текст'

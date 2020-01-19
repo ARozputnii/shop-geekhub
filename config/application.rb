@@ -12,7 +12,7 @@ module ShopGeekhub
     config.load_defaults 6.0
     config.autoloader = :classic
 
-    config.time_zone =  "Europe/Kiev"
+    config.time_zone =  'Europe/Kiev'
     config.i18n.default_locale = :ru
     config.i18n.available_locales = %i[ru en]
 

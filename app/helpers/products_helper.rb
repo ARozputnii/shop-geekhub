@@ -16,4 +16,10 @@ module ProductsHelper
            'https://cfl.com.ua/book/image/160.jpg']
     arr.sample
   end
+
+  def count_rating(product)
+    comments = product.comments
+    sum_star = comments&.sum(:rating)
+    @average_rating = sum_star / comments&.count
+  end
 end

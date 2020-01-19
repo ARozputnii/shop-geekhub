@@ -1,6 +1,69 @@
 ru:
+  link:
+    show: 'Показать'
+    edit: 'Редактировать'
+    delete: 'Удалить'
+    back: 'Назад'
+    new_product: 'Добавить продукт'
+    new_category: 'Добавить категорию'
+    buy: 'Купить'
+
+  navbar:
+    signup: 'Регистрация'
+    login: 'Войти'
+    logout: 'Выйти'
+    adminpanel: 'Админ Панель'
+    category: 'Категории'
+    all_product: 'Все категории'
+
+  category:
+    edit_category: 'Редактирование категории'
+    new_category: 'Новая категория'
+
   products:
     new:
       title: 'Новый продукт'
     edit:
       title: 'Редактирование продукта'
+    form:
+      submit: 'Сохранить'
+    index:
+      image: 'Изображение'
+      category: 'Категория'
+      title: 'Заголовок'
+      description: 'Описание'
+      price: 'Цена'
+      link: 'Ссылка'
+      h1: 'Добро пожаловать в книжный магаз GH'
+      h3: 'Выбирай и покупай лучшие книги в нашем клубе'
+      h5: 'Горячая цена, покупай сейчас!'
+      grn: 'грн'
+    sort:
+      sort: 'Сортировать'
+      most_popular: 'по популярности'
+      recently_added: 'недавно добавленные'
+      low_to_high: 'цена по возростанию'
+      high_to_low: 'цена по убыванию'
+      best: 'лучшие'
+
+  controllers:
+    categories:
+      created: 'Категория была создана'
+      edited: 'Категория успешно отредактирована'
+      destroyed: 'Категория удалена'
+    products:
+      created: 'Продукт был создан'
+      edited: 'Продукт успешно отредактирован'
+      destroyed: 'Продукт удалён'
+    sessions_controller:
+      logged_in: 'Добро пожаловать!'
+      failed: 'Неверная почта или пароль'
+      logget_out: 'Вы вышли'
+    users:
+      create: 'Добро пожаловать, теперь вы можете зайти'
+      destroyed: 'Пользователь был удалён!'
+  confirm: 'Вы уверены?'
+  search: 'Поиск'
+  email: 'Почта'
+  password: 'Пароль'
+
