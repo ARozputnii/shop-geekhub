@@ -1,5 +1,12 @@
 <div>
   <%= form_with(model: [ @product, @product.comments.build ], local: true) do |form| %>
+    <div id="reviewStars-input">
+      <%= collection_radio_buttons(:comment, :rating, Comment::STARS, :first, :second) do |b| %>
+        <%= b.radio_button %>
+        <%= b.label( title: b.text ) %>
+      <% end %>
+    </div>
+    <br> <br>
     <p>
       <%= form.label t('activerecord.attributes.comment.commenter') %><br>
       <%= form.text_field :commenter %>

@@ -35,4 +35,5 @@ class Product < ApplicationRecord
   scope :old_products, -> { order('created_at ASC') }
   scope :asc,          -> { order('price ASC') }
   scope :desc,         -> { order('price DESC') }
+  scope :best_star,    -> { group(:id).order('AVG(comments.rating) DESC') }
 end

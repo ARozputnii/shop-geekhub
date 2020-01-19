@@ -11,6 +11,8 @@ class ProductsController < ApplicationController
                   Product.all.new_products.paginate(page: params[:page], per_page: 8)
                 elsif params[:sort] == 'old_products'
                   Product.all.old_products.paginate(page: params[:page], per_page: 8)
+                elsif params[:sort] == 'best_star'
+                  Product.joins(:comments).best_star.paginate(page: params[:page], per_page: 8)
                 else
                   Product.all.paginate(page: params[:page], per_page: 8)
                 end

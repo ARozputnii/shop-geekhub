@@ -44,6 +44,7 @@ ru:
       recently_added: 'недавно добавленные'
       low_to_high: 'цена по возростанию'
       high_to_low: 'цена по убыванию'
+      best: 'лучшие'
 
   controllers:
     categories:

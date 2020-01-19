@@ -110,7 +110,10 @@ header>p {
   width: 400px;
   height: 500px;
 }
-
+.fa-star{
+  color: #d1c517;
+  font-size: 18px;
+}
 
 /*sprite with stars*/
 #reviewStars-input input:checked ~ label, #reviewStars-input label, #reviewStars-input label:hover, #reviewStars-input label:hover ~ label {
@@ -152,7 +155,7 @@ header>p {
   width: 43px;
   float: right;
   cursor: pointer;
-  margin-right: 10px;
+  margin-right: 40px;
 
   position: relative;
   z-index: 1;

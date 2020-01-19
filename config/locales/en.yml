@@ -44,6 +44,7 @@ en:
       recently_added: 'recently added'
       low_to_high: 'low to high'
       high_to_low: 'high to low'
+      best: 'best'
   controllers:
     categories:
       created: 'Category has been created'

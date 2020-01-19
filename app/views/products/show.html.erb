@@ -32,6 +32,7 @@
     <h2><%= @product.title %></h2>
     <div class="row ">
       <div class="col-sm-2"><%= t('products.index.category') %>: <%= @product.category.title %></div>
+      <div class="col-sm-2"> <small class="fa fa-star"></small><%= count_rating(@product).round(1) %></div>
       <div class="col-sm-2"><%= t('products.index.price') %>: <%= @product.price %></div>
     </div>
     <p class="description"><%= t('products.index.description') %>:  <%= @product.description %></p>
@@ -39,8 +40,8 @@
       <button type="button" class="btn btn-outline-secondary"><%= t('link.buy') %></button>
       <%= link_to t('link.back'), products_path, class:"btn btn-outline-secondary" %>
     </div>
-    <%= render 'comments/comments' %>
-    <br>
     <%= render 'comments/form' %>
+    <br>
+    <%= render 'comments/comments' %>
   </div>
 </div>
