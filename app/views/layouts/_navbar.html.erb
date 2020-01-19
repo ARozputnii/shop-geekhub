@@ -29,6 +29,11 @@
           <li><%= link_to t('navbar.login'), :login, class: "nav-link active" %></li>
         <% end %>
       </li>
+      <li class="nav-item">
+        <%= link_to line_items_path(product_id: @product), class:'nav-link' do %>
+          <i class="fas fa-shopping-cart"></i>
+        <% end %>
+      </li>
     </ul>
   </div>
 </nav>

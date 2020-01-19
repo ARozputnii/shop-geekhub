@@ -5,7 +5,7 @@
 #  id         :bigint           not null, primary key
 #  body       :text
 #  commenter  :string
-#  rating     :float
+#  rating     :float            default(0.0)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  product_id :bigint           not null
@@ -26,10 +26,10 @@ class Comment < ApplicationRecord
   validates :body,      presence: true, length: { minimum: 5 }
 
   STARS = [
-      [5, 'gorgeous'],
-      [4, 'good'],
-      [3, 'regular'],
-      [2, 'poor'],
-      [1, 'bad']
-  ]
+    [5, 'gorgeous'],
+    [4, 'good'],
+    [3, 'regular'],
+    [2, 'poor'],
+    [1, 'bad']
+  ].freeze
 end
