@@ -36,6 +36,7 @@ class CartsController < ApplicationController
     session[:cart_id] = nil
     redirect_to products_url, notice: 'Теперь ваша корзина пуста!'
   end
+
   private
 
   def set_cart

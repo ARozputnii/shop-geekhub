@@ -1,36 +1,32 @@
 class OrdersController < ApplicationController
   include CurrentCart
-  before_action :set_cart, only: [:new, :create]
-  before_action :set_order, only: [:show, :edit, :update, :destroy]
+  before_action :set_cart, only: %i[new create]
+  before_action :set_order, only: %i[show edit update destroy]
 
   def index
     @orders = Order.all
   end
 
-  def show
-  end
+  def show; end
 
   def new
     if @cart.line_items.empty?
-      redirect_to products_url, notice: "Your cart is empty"
+      redirect_to products_url, notice: 'Your cart is empty'
       return
     end
     @order = Order.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @order = Order.new(order_params)
-    @order.add_line_items_from_cart(@cart)
     if @order.save
       Cart.destroy(session[:cart_id])
-      session[:cart_id] = nil
       redirect_to products_url, notice:
           'Thank you for your order.'
     else
-      @cart = Current_cart
+      @cart = current_cart
       render action: 'new'
     end
   end
@@ -56,11 +52,12 @@ class OrdersController < ApplicationController
   end
 
   private
-    def set_order
-      @order = Order.find(params[:id])
-    end
 
-    def order_params
-      params.require(:order).permit(:name, :address, :email, :phone)
-    end
+  def set_order
+    @order = Order.find(params[:id])
+  end
+
+  def order_params
+    params.require(:order).permit(:name, :address, :email, :phone)
+  end
 end
