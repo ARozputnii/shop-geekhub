@@ -17,7 +17,7 @@ class LineItemsController < ApplicationController
 
   def create
     product = Product.find(params[:product_id])
-    @line_item = @cart.add_product(product.id)
+    @line_item = @cart.line_items.build(product: product)
     if @line_item.save
       redirect_to @line_item.cart
     else

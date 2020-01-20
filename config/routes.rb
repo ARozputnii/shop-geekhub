@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   scope '(:locale)', locale: /#{I18n.available_locales.join('|')}/ do
     root 'products#index'
+    resources :user_sessions
+    resources :users
+    resources :orders
     resources :carts
     resources :line_items
     resources :products, only: %i[index show] do
@@ -14,9 +17,6 @@ Rails.application.routes.draw do
         resources :comments
       end
     end
-
-    resources :user_sessions
-    resources :users
 
     get 'login' => 'user_sessions#new', :as => :login
     post 'logout' => 'user_sessions#destroy', :as => :logout
