@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  include CurrentCart
+  before_action :set_cart
   def index
     @product  = Product.first
     @products = if params[:search]

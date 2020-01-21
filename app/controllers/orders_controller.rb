@@ -33,23 +33,16 @@ class OrdersController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @order.update(order_params)
-        format.html { redirect_to @order, notice: 'Order was successfully updated.' }
-        format.json { render :show, status: :ok, location: @order }
-      else
-        format.html { render :edit }
-        format.json { render json: @order.errors, status: :unprocessable_entity }
-      end
+    if @order.update(order_params)
+      redirect_to @order, notice: 'Order was successfully updated.'
+    else
+      render :edit
     end
   end
 
   def destroy
     @order.destroy
-    respond_to do |format|
-      format.html { redirect_to orders_url, notice: 'Order was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to orders_url, notice: 'Order was successfully destroyed.'
   end
 
   private

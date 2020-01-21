@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  get 'pages/about'
-  get 'pages/Contact'
-  get 'pages/Help'
   scope '(:locale)', locale: /#{I18n.available_locales.join('|')}/ do
     root 'products#index'
     resources :user_sessions
@@ -26,6 +23,5 @@ Rails.application.routes.draw do
 
     get 'pages/about'
     get 'pages/help'
-
   end
 end

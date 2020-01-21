@@ -7,6 +7,7 @@ class Backoffice::BackofficeController < ActionController::Base
   def admin_verify
     redirect_to root_path unless current_user&.admin?
   end
+
   private
 
   def set_locale
