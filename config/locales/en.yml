@@ -15,6 +15,8 @@ en:
     adminpanel: 'Admin Panel'
     category: 'Category'
     all_product: 'All product'
+    about: 'About'
+    help: 'Delivery'
 
   category:
     edit_category: 'Edit category'
@@ -45,6 +47,13 @@ en:
       low_to_high: 'low to high'
       high_to_low: 'high to low'
       best: 'best'
+
+  order:
+    address: 'Address'
+    email: 'Email'
+    name: 'Name'
+    phone: 'Phone'
+    details: 'Enter your details'
   controllers:
     categories:
       created: 'Category has been created'

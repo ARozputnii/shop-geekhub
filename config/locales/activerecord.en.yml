@@ -3,6 +3,8 @@ en:
     models:
       product: 'Product'
       category: 'Category'
+      order: 'Order'
+      cart: 'Cart'
     attributes:
       product:
         title: 'title'
@@ -23,3 +25,8 @@ en:
         rating: 'Rating'
         commenter: 'Name'
         body: 'Text'
+      order:
+        address: 'Address'
+        email: 'Email'
+        name: 'Name'
+        phone: 'Phone'

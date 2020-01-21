@@ -15,6 +15,8 @@ ru:
     adminpanel: 'Админ Панель'
     category: 'Категории'
     all_product: 'Все категории'
+    about: 'О магазине'
+    help: 'Доставка'
 
   category:
     edit_category: 'Редактирование категории'
@@ -45,6 +47,14 @@ ru:
       low_to_high: 'цена по возростанию'
       high_to_low: 'цена по убыванию'
       best: 'лучшие'
+
+  order:
+    address: 'Адрес'
+    email: 'Почта'
+    name: 'Имя Фамилия'
+    phone: 'Телефон'
+    details: 'Введите вашие данные'
+
 
   controllers:
     categories:
