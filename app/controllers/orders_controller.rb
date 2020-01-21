@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   include CurrentCart
+  before_action :admin_verify, only: %i[show index edit update destroy]
   before_action :set_cart, only: %i[new create]
   before_action :set_order, only: %i[show edit update destroy]
 
