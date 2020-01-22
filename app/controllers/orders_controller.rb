@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
   include CurrentCart
   before_action :admin_verify, only: %i[show index edit update destroy]
-  before_action :set_cart, only: %i[new create]
+  before_action :set_cart
   before_action :set_order, only: %i[show edit update destroy]
 
   def index
@@ -22,11 +22,14 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
+    @order.add_line_items_from_cart(@cart)
     if @order.save
       Cart.destroy(session[:cart_id])
+      session[:cart_id] = nil
       redirect_to products_url, notice:
           'Thank you for your order.'
     else
+      @cart = current_cart
       render action: 'new'
     end
   end

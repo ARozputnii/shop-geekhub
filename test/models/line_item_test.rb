@@ -6,7 +6,7 @@
 #  quantity   :integer          default(1)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  cart_id    :bigint           not null
+#  cart_id    :bigint
 #  order_id   :bigint
 #  product_id :bigint           not null
 #

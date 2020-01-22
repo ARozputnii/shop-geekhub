@@ -5,10 +5,10 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Address</th>
-      <th>Email</th>
-      <th>Phone</th>
+      <th><%= t('order.name') %></th>
+      <th><%= t('order.address') %></th>
+      <th><%= t('order.email') %></th>
+      <th><%= t('order.phone') %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,9 +20,9 @@
         <td><%= order.address %></td>
         <td><%= order.email %></td>
         <td><%= order.phone %></td>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t('link.show'), order %></td>
+        <td><%= link_to t('link.edit'), edit_order_path(order) %></td>
+        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: t('confirm') } %></td>
       </tr>
     <% end %>
   </tbody>

@@ -1,4 +1,6 @@
 class Backoffice::BackofficeController < ActionController::Base
+  include CurrentCart
+  before_action :set_cart
   before_action :admin_verify
   before_action :set_locale
 
