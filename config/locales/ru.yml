@@ -54,6 +54,7 @@ ru:
     name: 'Имя Фамилия'
     phone: 'Телефон'
     details: 'Введите вашие данные'
+    quantity: 'Количество'
 
 
   controllers:

@@ -23,12 +23,12 @@
 
 <p>
   <% @order.line_items.each do |item| %>
-    <p></p><%= item.product.title %>
-    <%= item.quantity %>
-    <%= item.total_price %>
+    <p><%= t('activerecord.attributes.product.title') %>: <%= item.product.title %></p>
+  <p><%= t('order.quantity') %>: <%= item.quantity %> </p>
+  <p><%= t('activerecord.attributes.product.price') %>: <%= item.total_price %></p>
   <% end %>
 </p>
 <br>
 
-<%= link_to t('link.edit'), edit_order_path(@order) %> |
-<%= link_to t('link.back'), orders_path %>
+<%= link_to t('link.edit'), edit_order_path(@order), class:"btn btn-outline-secondary" %>
+<%= link_to t('link.back'), orders_path, class:"btn btn-outline-secondary" %>

@@ -22,12 +22,10 @@
         <td><%= order.phone %></td>
         <td><%= link_to t('link.show'), order %></td>
         <td><%= link_to t('link.edit'), edit_order_path(order) %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: t('confirm') } %></td>
+        <td><%= link_to t('link.delete'), order, method: :delete, data: { confirm: t('confirm') } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
 <br>
-
-<%= link_to 'New Order', new_order_path %>
+<%= link_to t('link.back'), admin_products_path, class:"btn btn-outline-secondary" %>

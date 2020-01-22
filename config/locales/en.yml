@@ -54,6 +54,8 @@ en:
     name: 'Name'
     phone: 'Phone'
     details: 'Enter your details'
+    quantity: 'Quantity'
+
   controllers:
     categories:
       created: 'Category has been created'
