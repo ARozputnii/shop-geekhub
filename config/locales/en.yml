@@ -49,12 +49,19 @@ en:
       best: 'best'
 
   order:
+    orders: 'Orders'
     address: 'Address'
     email: 'Email'
     name: 'Name'
     phone: 'Phone'
     details: 'Enter your details'
     quantity: 'Quantity'
+
+  cart:
+    cart: 'Корзина'
+    total: 'Общая сумма'
+    checkout: 'Оформить заказ'
+    cart_empty: 'Очистить корзину'
 
   controllers:
     categories:

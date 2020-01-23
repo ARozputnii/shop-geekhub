@@ -49,12 +49,19 @@ ru:
       best: 'лучшие'
 
   order:
+    orders: 'Заказы'
     address: 'Адрес'
     email: 'Почта'
     name: 'Имя Фамилия'
     phone: 'Телефон'
     details: 'Введите вашие данные'
     quantity: 'Количество'
+
+  cart:
+    cart: 'Корзина'
+    total: 'Общая сумма'
+    checkout: 'Оформить заказ'
+    cart_empty: 'Очистить корзину'
 
 
   controllers:

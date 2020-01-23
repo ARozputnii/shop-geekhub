@@ -29,7 +29,6 @@ class OrdersController < ApplicationController
       redirect_to products_url, notice:
           'Thank you for your order.'
     else
-      @cart = current_cart
       render action: 'new'
     end
   end

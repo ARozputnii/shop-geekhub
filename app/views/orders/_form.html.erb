@@ -1,4 +1,6 @@
 <%= form_for(@order) do |f| %>
+  <div class="row offset-sm-2">
+    <div class="col-sm-8 offset-sm-1">
   <% if @order.errors.any? %>
     <div id="error_explanation">
       <ul>
@@ -9,8 +11,6 @@
     </div>
   <% end %>
   <% if current_user %>
-    <div class="row offset-sm-2">
-      <div class="col-sm-8 offset-sm-1">
         <div class="form-group row"  >
           <%= f.label t('order.name'), class:"col-sm-3 col-form-label"%>
           <div class="col-sm-6">

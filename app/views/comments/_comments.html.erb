@@ -1,6 +1,6 @@
 <% @product.comments.each do |comment| %>
   <p>
-    <%= comment.rating.to_i.times do %>
+    <% comment.rating.to_i.times do %>
       <small class="fa fa-star"></small>
     <% end %>
   </p>
