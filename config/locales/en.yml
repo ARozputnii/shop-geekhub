@@ -56,7 +56,11 @@ en:
     phone: 'Phone'
     details: 'Enter your details'
     quantity: 'Quantity'
+    new: 'new'
+    completed: 'Completed'
+    canceled: 'Canceled'
     comment: 'Comment'
+
 
   cart:
     cart: 'Cart'

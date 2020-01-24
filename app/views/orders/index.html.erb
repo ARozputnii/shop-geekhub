@@ -1,7 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <h1><%= t('order.orders') %></h1>
-
+<div class="dropright mb-4">
+  <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+    <%= t('products.sort.sort') %>
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <%= link_to t('order.orders'),    orders_path, class: 'dropdown-item' %>
+    <%= link_to t('order.new'),       orders_path(sort: 'new_orders'), class: 'dropdown-item' %>
+    <%= link_to t('order.completed'), orders_path(sort: 'completed'), class: 'dropdown-item' %>
+    <%= link_to t('order.canceled'),  orders_path(sort: 'canceled'), class: 'dropdown-item' %>
+  </div>
+</div>
 <table>
   <thead>
     <tr>

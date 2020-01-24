@@ -5,7 +5,15 @@ class OrdersController < ApplicationController
   before_action :set_order, only: %i[show edit update destroy]
 
   def index
-    @orders = Order.all
+    @orders = if params[:sort] == 'new'
+                Order.all.new_orders
+              elsif params[:sort] == 'completed'
+                Order.all.completed
+              elsif params[:sort] == 'canceled'
+                Order.all.canceled
+              else
+                Order.order(created_at: :desc)
+              end
   end
 
   def show; end
