@@ -28,7 +28,7 @@ class Order < ApplicationRecord
 
   validates :name, :address, :email, :phone, presence: true
 
-  Statuses = ['new', 'completed', 'canceled']
+  STATUSES = [['new','new'], ['completed', 'completed'], ['canceled', 'canceled']]
   scope :new_orders, -> { where(status: 'new') }
   scope :completed,  -> { where(status: 'completed') }
   scope :canceled,   -> { where(status: 'canceled') }

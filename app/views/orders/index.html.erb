@@ -9,6 +9,7 @@
       <th><%= t('order.address') %></th>
       <th><%= t('order.email') %></th>
       <th><%= t('order.phone') %></th>
+      <th><%= t('order.orders') %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,6 +21,7 @@
         <td><%= order.address %></td>
         <td><%= order.email %></td>
         <td><%= order.phone %></td>
+        <td><%= order.status %></td>
         <td><%= link_to t('link.show'), order %></td>
         <td><%= link_to t('link.edit'), edit_order_path(order) %></td>
         <td><%= link_to t('link.delete'), order, method: :delete, data: { confirm: t('confirm') } %></td>
