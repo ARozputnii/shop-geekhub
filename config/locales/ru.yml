@@ -56,6 +56,10 @@ ru:
     phone: 'Телефон'
     details: 'Введите вашие данные'
     quantity: 'Количество'
+    completed: 'Обработаный'
+    new: 'Новый'
+    canceled: 'Удалённый'
+
 
   cart:
     cart: 'Корзина'

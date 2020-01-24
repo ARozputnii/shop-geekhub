@@ -31,3 +31,4 @@ en:
         email: 'Email'
         name: 'Name'
         phone: 'Phone'
+        status: 'Status'
