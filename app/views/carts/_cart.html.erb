@@ -1,6 +1,6 @@
 <div class="offset-sm-4 mt-5">
-  <h2><%= t('cart.cart') %></h2>
-  <table>
+  <h2 class="mt-5"><%= t('cart.cart') %></h2>
+  <table class="mt-5">
     <% @cart.line_items.each do |item| %>
       <tr>
         <td><%= item.quantity %>&times;</td>
@@ -13,7 +13,7 @@
       <td class="total_cell"><%= cart.total_price %></td>
     </tr>
   </table>
-  <div class="row">
+  <div class="row mt-5">
     <div class="col-2"><%= button_to t('cart.checkout'), new_order_path, method: :get, class:'btn btn-outline-dark' %></div>
     <div class="offset-1">
       <%= button_to t('cart.cart_empty'), cart, method: :delete,

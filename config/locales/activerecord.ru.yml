@@ -5,6 +5,7 @@ ru:
       category: 'Категория'
       order: 'Заказ'
       cart: 'Корзина'
+      user: 'Пользователя'
     attributes:
       product:
         title: 'Название'

@@ -1,9 +1,11 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update destroy]
+  before_action :admin_verify, only: %i[show index edit delete]
 
   def index
     @users = User.all
   end
+
   def show; end
 
   def new
@@ -28,6 +30,7 @@ class UsersController < ApplicationController
       render :edit
     end
   end
+
   def destroy
     @user.destroy
     redirect_to users_url, notice: t('controllers.users.destroyed')

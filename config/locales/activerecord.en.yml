@@ -5,6 +5,7 @@ en:
       category: 'Category'
       order: 'Order'
       cart: 'Cart'
+      user: 'User'
     attributes:
       product:
         title: 'title'

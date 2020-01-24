@@ -62,6 +62,8 @@ ru:
     total: 'Общая сумма'
     checkout: 'Оформить заказ'
     cart_empty: 'Очистить корзину'
+    empty: 'Ваша корзина пустая'
+
 
 
   controllers:

@@ -12,7 +12,7 @@ class OrdersController < ApplicationController
 
   def new
     if @cart.line_items.empty?
-      redirect_to products_url, notice: 'Your cart is empty'
+      redirect_to products_url, notice: t('cart.empty')
       return
     end
     @order = Order.new

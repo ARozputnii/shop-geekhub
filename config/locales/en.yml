@@ -58,10 +58,12 @@ en:
     quantity: 'Quantity'
 
   cart:
-    cart: 'Корзина'
-    total: 'Общая сумма'
-    checkout: 'Оформить заказ'
-    cart_empty: 'Очистить корзину'
+    cart: 'Cart'
+    total: 'Total'
+    checkout: 'Checkout'
+    cart_empty: 'Empty cart'
+    empty: 'Your cart is empty'
+
 
   controllers:
     categories:

@@ -6,7 +6,12 @@ class CartsController < ApplicationController
     @carts = Cart.all
   end
 
-  def show; end
+  def show
+    if @cart.line_items.empty?
+      redirect_to products_url, notice: t('cart.empty')
+      return
+    end
+  end
 
   def new
     @cart = Cart.new
