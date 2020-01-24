@@ -1,21 +1,16 @@
 <%= form_with url: user_sessions_path, method: :post do |f| %>
-<!--  <%# if user.errors.any? %>
-    <div class="alert alert-danger"><ul>
-        <%# user.errors.full_messages.each do |message| %>
-          <li><%#= message %></li>
-        <%# end %>
-      </ul>
-    </div>
-  <%# end %>-->
-  <div class="field">
+
+  <div class="field mb-3">
     <%= f.label t('email') %><br />
-    <%= f.text_field :email %>
+    <%= f.text_field :email, class:"form-control col-4" %>
   </div>
-  <div class="field">
+  <div class="field mb-3">
     <%= f.label t('password') %><br />
-    <%= f.password_field :password %>
+    <%= f.password_field :password, class:"form-control col-4" %>
   </div>
   <div class="actions"><br>
     <%= f.submit t('navbar.login'), class:"btn btn-outline-dark" %>
+    <%= link_to t('navbar.signup'), new_user_path, class: "btn btn-outline-dark" %>
+
   </div>
 <% end %>

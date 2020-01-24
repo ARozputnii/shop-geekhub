@@ -15,6 +15,8 @@ ru:
     adminpanel: 'Админ Панель'
     category: 'Категории'
     all_product: 'Все категории'
+    about: 'О магазине'
+    help: 'Доставка'
 
   category:
     edit_category: 'Редактирование категории'
@@ -45,6 +47,30 @@ ru:
       low_to_high: 'цена по возростанию'
       high_to_low: 'цена по убыванию'
       best: 'лучшие'
+
+  order:
+    orders: 'Заказы'
+    address: 'Адрес'
+    email: 'Почта'
+    name: 'Имя Фамилия'
+    phone: 'Телефон'
+    details: 'Введите вашие данные'
+    quantity: 'Количество'
+    completed: 'Обработаный'
+    new: 'Новый'
+    canceled: 'Удалённый'
+    comment: 'Коммент'
+
+
+
+  cart:
+    cart: 'Корзина'
+    total: 'Общая сумма'
+    checkout: 'Оформить заказ'
+    cart_empty: 'Очистить корзину'
+    empty: 'Ваша корзина пустая'
+
+
 
   controllers:
     categories:

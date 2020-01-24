@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong><%= t('order.name') %>:</strong>
+  <%= @order.name %>
+</p>
+
+<p>
+  <strong><%= t('order.address') %>:</strong>
+  <%= @order.address %>
+</p>
+
+<p>
+  <strong><%= t('order.email') %>:</strong>
+  <%= @order.email %>
+</p>
+
+<p>
+  <strong><%= t('order.phone') %>:</strong>
+  <%= @order.phone %>
+</p>
+<p>
+  <strong><%= t('activerecord.attributes.order.status') %>:</strong>
+  <%= @order.status %>
+</p>
+<p>
+  <strong><%= t('order.comment') %>:</strong>
+  <%= @order.comment %>
+</p>
+
+
+<p>
+  <% @order.line_items.each do |item| %>
+    <p><%= t('activerecord.attributes.product.title') %>: <%= item.product.title %></p>
+  <p><%= t('order.quantity') %>: <%= item.quantity %> </p>
+  <p><%= t('activerecord.attributes.product.price') %>: <%= item.total_price %></p>
+  <% end %>
+</p>
+<br>
+
+<%= link_to t('link.edit'), edit_order_path(@order), class:"btn btn-outline-secondary" %>
+<%= link_to t('link.back'), orders_path, class:"btn btn-outline-secondary" %>

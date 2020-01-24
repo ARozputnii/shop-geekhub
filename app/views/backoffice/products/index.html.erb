@@ -1,5 +1,4 @@
 <div class="index_product">
-`<div class="offset-xl-2">
   <div class="row category_and_link offset-md-1">
     <div>
       <table>
@@ -24,13 +23,17 @@
     </div>
     <div class="offset-md-1 links_group">
       <div class="form-inline">
-          <%= form_tag(admin_products_path, method: "get", id: "search-form") do %>
-            <%= text_field_tag :search, params[:search], placeholder: t('search'), class:'form-control' %>
-            <button type="submit" class="btn btn-outline-secondary"><i class="fa fa-search"></i></button>
-          <% end %>
-        </div>
+        <%= form_tag(admin_products_path, method: "get", id: "search-form") do %>
+          <%= text_field_tag :search, params[:search], placeholder: t('search'), class:'form-control' %>
+          <button type="submit" class="btn btn-outline-secondary"><i class="fa fa-search"></i></button>
+        <% end %>
+      </div>
       <div><%= link_to t('link.new_category'), new_admin_category_path, class: 'btn btn-outline-secondary' %></div>
       <div><%= link_to t('link.new_product'),  new_admin_product_path,  class: 'btn btn-outline-secondary' %></div>
+      <div class="row">
+        <div class="col-4"><%= link_to t('order.orders'), orders_path,  class: 'btn btn-outline-secondary' %></div>
+        <div class="col"><%= link_to 'User', users_path,  class: 'btn btn-outline-secondary' %></div>
+      </div>
     </div>
   </div>
   <table class="table_product">
@@ -56,7 +59,7 @@
           <td>
             <%= link_to products.title, admin_product_path(products), class:'link'%>
           </td>
-          <td><%= products.description %></td>
+          <td><%= truncate(strip_tags(products.description.to_s), length: 53) %></td>
           <td><%= products.price %></td>
           <td><%= link_to t('link.show'), admin_product_path(products) %>  |
             <%= link_to t('link.edit'), edit_admin_product_path(products) %>  |
@@ -66,7 +69,6 @@
       <% end %>
     </ul>
   </table>
-</div>
 <div class="row justify-content-center">
   <%= will_paginate(@things, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: 'pagination-sm') %>
 </div>`

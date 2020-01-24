@@ -1,0 +1,37 @@
+# == Schema Information
+#
+# Table name: orders
+#
+#  id         :bigint           not null, primary key
+#  address    :text
+#  comment    :string
+#  email      :string
+#  name       :string
+#  phone      :integer
+#  status     :string           default("new")
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  user_id    :bigint
+#
+# Indexes
+#
+#  index_orders_on_user_id  (user_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (user_id => users.id)
+#
+
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  address: MyText
+  email: MyString
+  pay_type: MyString
+
+two:
+  name: MyString
+  address: MyText
+  email: MyString
+  pay_type: MyString

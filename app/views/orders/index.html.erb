@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= t('order.orders') %></h1>
+<div class="dropright mb-4">
+  <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+    <%= t('products.sort.sort') %>
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <%= link_to t('order.orders'),    orders_path, class: 'dropdown-item' %>
+    <%= link_to t('order.new'),       orders_path(sort: 'new_orders'), class: 'dropdown-item' %>
+    <%= link_to t('order.completed'), orders_path(sort: 'completed'), class: 'dropdown-item' %>
+    <%= link_to t('order.canceled'),  orders_path(sort: 'canceled'), class: 'dropdown-item' %>
+  </div>
+</div>
+<table>
+  <thead>
+    <tr>
+      <th><%= t('order.name') %></th>
+      <th><%= t('order.address') %></th>
+      <th><%= t('order.email') %></th>
+      <th><%= t('order.phone') %></th>
+      <th><%= t('order.orders') %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.name %></td>
+        <td><%= order.address %></td>
+        <td><%= order.email %></td>
+        <td><%= order.phone %></td>
+        <td><%= order.status %></td>
+        <td><%= link_to t('link.show'), order %></td>
+        <td><%= link_to t('link.edit'), edit_order_path(order) %></td>
+        <td><%= link_to t('link.delete'), order, method: :delete, data: { confirm: t('confirm') } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<%= link_to t('link.back'), admin_products_path, class:"btn btn-outline-secondary" %>

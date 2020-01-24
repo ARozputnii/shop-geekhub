@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  include CurrentCart
+  before_action :set_cart
   def index
     @product  = Product.first
     @products = if params[:search]
@@ -14,7 +16,7 @@ class ProductsController < ApplicationController
                 elsif params[:sort] == 'best_star'
                   Product.joins(:comments).best_star.paginate(page: params[:page], per_page: 8)
                 else
-                  Product.all.paginate(page: params[:page], per_page: 8)
+                  Product.all.order(created_at: :desc).paginate(page: params[:page], per_page: 8)
                 end
     @categories = Category.all
     if params[:category]

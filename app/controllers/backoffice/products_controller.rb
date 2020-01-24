@@ -13,6 +13,7 @@ class Backoffice::ProductsController < Backoffice::BackofficeController
                   else
                     Category.all.order(created_at: :desc).paginate(page: params[:page], per_page: 8)
                   end
+    @orders = Order.all
   end
 
   def show; end

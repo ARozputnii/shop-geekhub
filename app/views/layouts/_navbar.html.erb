@@ -9,11 +9,10 @@
     </ul>
     <ul class="navbar-nav mr-5">
       <li class="nav-item">
-        <% if I18n.locale == :ru  %>
-          <%= link_to 'Рус', url_for(locale: :en), class: 'nav-link' %>
-        <% else %>
-          <%= link_to 'EN', url_for(locale: :ru), class: 'nav-link' %>
-        <% end %>
+        <%= link_to t('navbar.about'), pages_about_path, class:'nav-link' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to t('navbar.help'), pages_help_path, class:'nav-link' %>
       </li>
       <li class="nav-item" id="nav">
         <% if current_user %>
@@ -29,6 +28,19 @@
           <li><%= link_to t('navbar.login'), :login, class: "nav-link active" %></li>
         <% end %>
       </li>
+      <li class="nav-item">
+        <% if I18n.locale == :ru  %>
+          <%= link_to 'Рус', url_for(locale: :en), class: 'nav-link' %>
+        <% else %>
+          <%= link_to 'EN', url_for(locale: :ru), class: 'nav-link' %>
+        <% end %>
+      </li>
+      <li class="nav-item">
+        <%= link_to cart_path(id: @cart), class:'nav-link' do %>
+          <i class="fas fa-shopping-cart"></i>
+        <% end %>
+      </li>
     </ul>
   </div>
 </nav>
+

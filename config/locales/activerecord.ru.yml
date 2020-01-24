@@ -3,6 +3,9 @@ ru:
     models:
       product: 'Продукт'
       category: 'Категория'
+      order: 'Заказ'
+      cart: 'Корзина'
+      user: 'Пользователя'
     attributes:
       product:
         title: 'Название'
@@ -23,3 +26,10 @@ ru:
         rating: 'Рейтинг'
         commenter: 'Автор'
         body: 'Текст'
+      order:
+        address: 'Адрес'
+        email: 'Почта'
+        name: 'Имя Фамилия'
+        phone: 'Телефон'
+        status: 'Статус'
+

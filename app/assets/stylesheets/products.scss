@@ -41,7 +41,7 @@ header>p {
 }
 
 .card_body{
-  padding-top: 120px;
+  padding-top: 60px;
 
 }
 .card_title{
@@ -50,7 +50,7 @@ header>p {
 }
 .card_text{
   font-size: 20px;
-  padding-top: 30px;
+  padding-top: 10px;
   padding-bottom: 50px;
 
 }
@@ -74,9 +74,9 @@ header>p {
 
 .products_cart{
   display: block;
-  height: 450px;
-  width: 240px;
-  margin-left: 120px;
+  height: 500px;
+  width: 260px;
+  margin-left: 80px;
   margin-bottom: 40px;
 }
 .product_image_img{
@@ -100,6 +100,11 @@ header>p {
   padding-top: 50px;
 }
 
+.cart__button{
+  border: none;
+  padding-top: 0;
+  padding-right: 5px;
+}
 /*show*/
 
 .carousel__image{

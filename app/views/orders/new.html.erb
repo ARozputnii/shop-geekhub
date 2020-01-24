@@ -1,0 +1,50 @@
+<div class="form">
+  <fieldset>
+    <div class="offset-sm-3 mt-3 mb-5">
+      <legend><%= t('order.details') %>
+    </div>
+    <%= form_for(@order) do |f| %>
+      <div class="row offset-sm-2 mt-3">
+        <div class="col-sm-8 offset-sm-1">
+          <% if @order.errors.any? %>
+            <div id="error_explanation">
+              <ul>
+                <% @order.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <div class="form-group row"  >
+            <%= f.label t('order.name'), class:"col-sm-3 col-form-label"%>
+            <div class="col-sm-6">
+              <%= f.text_field :name , class:"form-control" %>
+            </div>
+          </div>
+          <div class="form-group row"  >
+            <%= f.label t('order.address'), class:"col-sm-3 col-form-label"%>
+            <div class="col-sm-6">
+              <%= f.text_area :address, class:"form-control" %>
+            </div>
+          </div>
+          <div class="form-group row"  >
+            <%= f.label t('order.email'), class:"col-sm-3 col-form-label"%>
+            <div class="col-sm-6">
+              <%= f.email_field :email, class:"form-control" %>
+            </div>
+          </div>
+          <div class="form-group row"  >
+            <%= f.label  t('order.phone'), class:"col-sm-3 col-form-label"%>
+            <div class="col-sm-6">
+              <%= f.phone_field :phone, class:"form-control" %>
+            </div>
+          </div>
+          <div class="actions mt-3">
+            <%= f.submit class:"btn btn-outline-dark" %>
+            <%= link_to t('link.back'), orders_path , class:"btn btn-outline-dark"%>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </fieldset>
+</div>

@@ -1,5 +1,12 @@
 class ApplicationController < ActionController::Base
+  include CurrentCart
+  before_action :set_cart
   before_action :set_locale
+
+  def admin_verify
+    redirect_to root_path unless current_user&.admin?
+  end
+
   def check_on_present
     redirect_to root_path if current_user.present?
   end
