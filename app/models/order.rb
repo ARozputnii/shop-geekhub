@@ -28,7 +28,7 @@ class Order < ApplicationRecord
 
   validates :name, :address, :email, :phone, presence: true
 
-  STATUSES = [['new','new'], ['completed', 'completed'], ['canceled', 'canceled']]
+  STATUSES = [%w[new new], %w[completed completed], %w[canceled canceled]].freeze
   scope :new_orders, -> { where(status: 'new') }
   scope :completed,  -> { where(status: 'completed') }
   scope :canceled,   -> { where(status: 'canceled') }
@@ -40,4 +40,3 @@ class Order < ApplicationRecord
     end
   end
 end
-

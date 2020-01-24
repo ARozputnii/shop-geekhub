@@ -9,7 +9,11 @@ Category.create([{ title: 'Book', description: 'desc' }, { title: 'Magazine', de
 10.times do
   Product.create([{
                    title: Faker::Book.title,
-                   description: Faker::Quotes::Shakespeare.king_richard_iii_quote,
+                   description: Faker::Quotes::Shakespeare.king_richard_iii_quote + 'Lorem ipsum dolor sit amet,
+                                consectetur adipiscing elit,
+                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                    price: rand(300..999),
                    category_id: 1
                  }])
@@ -17,16 +21,22 @@ end
 10.times do
   Product.create([{
                    title: Faker::Book.title,
-                   description: Faker::Quotes::Shakespeare.as_you_like_it_quote,
-                   price: rand(300..1999),
+                   description: Faker::Quotes::Shakespeare.king_richard_iii_quote + 'Lorem ipsum dolor sit amet,
+                                consectetur adipiscing elit,
+                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',                   price: rand(300..1999),
                    category_id: 2
                  }])
 end
 10.times do
   Product.create([{
                    title: Faker::Book.title,
-                   description: Faker::Quotes::Shakespeare.romeo_and_juliet_quote,
-                   price: rand(300..1999),
+                   description: Faker::Quotes::Shakespeare.king_richard_iii_quote + 'Lorem ipsum dolor sit amet,
+                                consectetur adipiscing elit,
+                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',                   price: rand(300..1999),
                    category_id: 3
                  }])
 end

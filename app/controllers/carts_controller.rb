@@ -9,7 +9,7 @@ class CartsController < ApplicationController
   def show
     if @cart.line_items.empty?
       redirect_to products_url, notice: t('cart.empty')
-      return
+      nil
     end
   end
 
