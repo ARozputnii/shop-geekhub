@@ -1,5 +1,5 @@
 if User.find_by(email: 'admin@example.com').nil?
-  User.create([email: 'admin@example.com', password: 'adminpass', password_confirmation: 'adminpass', admin: true])
+  User.create([email: 'admin@example.com', password: 'Adminpass', password_confirmation: 'Adminpass', admin: true])
 else
   puts 'User already exist'
 end
@@ -9,7 +9,7 @@ Category.create([{ title: 'Book', description: 'desc' }, { title: 'Magazine', de
 10.times do
   Product.create([{
                    title: Faker::Book.title,
-                   description: Faker::Quotes::Shakespeare.king_richard_iii_quote + 'Lorem ipsum dolor sit amet,
+                   description: Faker::Quotes::Shakespeare.king_richard_iii_quote.to_s + 'Lorem ipsum dolor sit amet,
                                 consectetur adipiscing elit,
                                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                                 Ut enim ad minim veniam,
@@ -21,7 +21,7 @@ end
 10.times do
   Product.create([{
                    title: Faker::Book.title,
-                   description: Faker::Quotes::Shakespeare.king_richard_iii_quote + 'Lorem ipsum dolor sit amet,
+                   description: Faker::Quotes::Shakespeare.king_richard_iii_quote.to_s + 'Lorem ipsum dolor sit amet,
                                 consectetur adipiscing elit,
                                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                                 Ut enim ad minim veniam,
@@ -32,7 +32,7 @@ end
 10.times do
   Product.create([{
                    title: Faker::Book.title,
-                   description: Faker::Quotes::Shakespeare.king_richard_iii_quote + 'Lorem ipsum dolor sit amet,
+                   description: Faker::Quotes::Shakespeare.king_richard_iii_quote.to_s + 'Lorem ipsum dolor sit amet,
                                 consectetur adipiscing elit,
                                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                                 Ut enim ad minim veniam,
@@ -49,7 +49,7 @@ end
   Comment.create([{
                    product_id: rand(1..30),
                    commenter: Faker::Name.name,
-                   rating: rand(1..5),
-                   body: Faker::Quotes::Shakespeare.king_richard_iii_quote
+                   rating: rand(1..5).to_i ,
+                   body: Faker::Quotes::Shakespeare.king_richard_iii_quote.to_s
                  }])
 end

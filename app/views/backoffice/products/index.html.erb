@@ -59,7 +59,7 @@
           <td>
             <%= link_to products.title, admin_product_path(products), class:'link'%>
           </td>
-          <td><%= products.description %></td>
+          <td><%= truncate(strip_tags(products.description.to_s), length: 53) %></td>
           <td><%= products.price %></td>
           <td><%= link_to t('link.show'), admin_product_path(products) %>  |
             <%= link_to t('link.edit'), edit_admin_product_path(products) %>  |
