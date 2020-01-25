@@ -1,6 +1,5 @@
 class CartsController < ApplicationController
   before_action :set_cart, only: %i[show edit update destroy]
-  rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
 
   def index
     @carts = Cart.all
@@ -9,7 +8,6 @@ class CartsController < ApplicationController
   def show
     if @cart.line_items.empty?
       redirect_to products_url, notice: t('cart.empty')
-      nil
     end
   end
 
@@ -50,10 +48,5 @@ class CartsController < ApplicationController
 
   def cart_params
     params.fetch(:cart, {})
-  end
-
-  def invalid_cart
-    logger.error "Attempt to access invalid cart #{params[:id]}"
-    redirect_to products_url, notice: 'Invalid cart'
   end
 end
