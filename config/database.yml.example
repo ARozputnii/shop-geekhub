@@ -22,7 +22,8 @@ test:
   pool: 5
 
 production:
-  <<: *default
-  database: shop-geekhub_production
-  username: <%= Rails.application.credentials.aws[:db_name] %>
-  password: <%= Rails.application.credentials.aws[:db_password] %>
+  adapter: postgresql
+  host: 157.230.114.1
+  database: shop-geelhub
+  username: deployer
+  password: deployer
