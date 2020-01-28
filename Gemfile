@@ -37,6 +37,22 @@ group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'web-console', '>= 3.3.0'
+  ##
+  #
+  gem 'annotate', '~> 3.0', '>= 3.0.3' # для роботы с дб моделями
+  gem 'bootstrap', '~> 4.4.1'
+  gem 'bootstrap-will_paginate', '~> 1.0'
+  gem 'byebug'
+  gem 'carrierwave', '~> 2.0'
+  gem 'faker', '~> 2.7'
+  gem 'font_awesome5_rails'
+  gem 'jquery-rails'
+  gem 'mini_magick', '~> 4.5', '>= 4.5.1'
+  gem 'rmagick'
+  gem 'rubocop', '~> 0.77.0'
+  gem 'russian', '~> 0.6.0'
+  gem 'sorcery'
+  gem 'will-paginate-i18n', '~> 0.1.15'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'capistrano'
   gem 'capistrano-nginx', '~> 1.0'
@@ -45,7 +61,7 @@ group :development do
   gem 'capistrano-upload-config', '~> 0.7.0'
   gem 'capistrano3-puma'
   gem 'sshkit-sudo', '~> 0.1.0'
-  gem 'rmagick'
+
 end
 
 group :test do
@@ -73,3 +89,4 @@ gem 'rubocop', '~> 0.77.0'
 gem 'russian', '~> 0.6.0'
 gem 'sorcery'
 gem 'will-paginate-i18n', '~> 0.1.15'
+
