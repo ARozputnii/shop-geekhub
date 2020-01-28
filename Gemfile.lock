@@ -304,7 +304,7 @@ DEPENDENCIES
   bootstrap (~> 4.4.1)
   bootstrap-will_paginate (~> 1.0)
   byebug
-  capistrano (~> 3.8, >= 3.8.1)
+  capistrano
   capistrano-nginx (~> 1.0)
   capistrano-rails (~> 1.2, >= 1.2.3)
   capistrano-rbenv
