@@ -71,3 +71,5 @@ yarn-debug.log*
 
 /.idea
 .idea
+/config/database.production.yml
+/config/secrets.production.yml
