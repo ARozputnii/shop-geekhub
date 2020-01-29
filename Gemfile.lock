@@ -220,7 +220,6 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     regexp_parser (1.6.0)
-    rmagick (4.0.0)
     rubocop (0.77.0)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
@@ -321,7 +320,6 @@ DEPENDENCIES
   pg (>= 0.18, < 2.0)
   puma (~> 4.1)
   rails (~> 6.0.2)
-  rmagick
   rubocop (~> 0.77.0)
   russian (~> 0.6.0)
   sass-rails (>= 6)
