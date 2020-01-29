@@ -25,11 +25,9 @@ class Product < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :line_items, dependent: :destroy
 
-=begin
-  validates :title, uniqueness: true, length: { in: 3..19 }
-  validates :description, length: { in: 10..250 }
-  validates :price, presence: true, length: { maximum: 8 }
-=end
+  #   validates :title, uniqueness: true, length: { in: 3..19 }
+  #   validates :description, length: { in: 10..250 }
+  #   validates :price, presence: true, length: { maximum: 8 }
 
   mount_uploaders :images, ImageUploader
   has_rich_text :description

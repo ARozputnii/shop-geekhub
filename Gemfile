@@ -61,7 +61,6 @@ group :development do
   gem 'capistrano-upload-config', '~> 0.7.0'
   gem 'capistrano3-puma'
   gem 'sshkit-sudo', '~> 0.1.0'
-
 end
 
 group :test do
@@ -84,9 +83,8 @@ gem 'faker', '~> 2.7'
 gem 'font_awesome5_rails'
 gem 'jquery-rails'
 gem 'mini_magick', '~> 4.5', '>= 4.5.1'
-gem 'rmagick', '~> 2.15', '>= 2.15.4'
+gem 'rmagick'
 gem 'rubocop', '~> 0.77.0'
 gem 'russian', '~> 0.6.0'
 gem 'sorcery'
 gem 'will-paginate-i18n', '~> 0.1.15'
-

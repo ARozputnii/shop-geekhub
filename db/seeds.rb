@@ -25,7 +25,7 @@ end
                                 consectetur adipiscing elit,
                                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                                 Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',                   price: rand(300..1999),
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ', price: rand(300..1999),
                    category_id: 2
                  }])
 end
@@ -36,7 +36,7 @@ end
                                 consectetur adipiscing elit,
                                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                                 Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',                   price: rand(300..1999),
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ', price: rand(300..1999),
                    category_id: 3
                  }])
 end
@@ -49,7 +49,7 @@ end
   Comment.create([{
                    product_id: rand(1..30),
                    commenter: Faker::Name.name,
-                   rating: rand(1..5).to_i ,
+                   rating: rand(1..5).to_i,
                    body: Faker::Quotes::Shakespeare.king_richard_iii_quote.to_s
                  }])
 end
