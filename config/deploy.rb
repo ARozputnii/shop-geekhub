@@ -6,7 +6,7 @@ set :application, 'shop-geekhub'
 set :repo_url, 'git@github.com:ARozputnii/shop-geekhub.git'
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 set :user, 'deployer'
-server '157.230.114.1', user: "#{fetch(:user)}", roles: %w{app db web}, primary: true
+server '104.248.21.221', user: "#{fetch(:user)}", roles: %w{app db web}, primary: true
 set :deploy_to,       "/home/#{fetch(:user)}/apps/#{fetch(:application)}"
 set :pty, true
 
