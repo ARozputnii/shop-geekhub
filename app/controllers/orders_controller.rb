@@ -35,7 +35,7 @@ class OrdersController < ApplicationController
       Cart.destroy(session[:cart_id])
       session[:cart_id] = nil
       redirect_to products_url, notice:
-          'Thank you for your order.'
+          t('order.thank')
     else
       render action: 'new'
     end

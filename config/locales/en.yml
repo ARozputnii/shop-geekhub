@@ -60,6 +60,7 @@ en:
     completed: 'Completed'
     canceled: 'Canceled'
     comment: 'Comment'
+    thank: 'Thank you for your order.'
 
 
   cart:
