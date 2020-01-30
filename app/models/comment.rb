@@ -21,9 +21,8 @@
 
 class Comment < ApplicationRecord
   belongs_to :product
-  #
-    validates :commenter, presence: true, length: { minimum: 2 }
-    validates :body,      presence: true, length: { minimum: 5 }
+  validates :commenter, presence: true, length: { minimum: 2 }
+  validates :body,      presence: true, length: { minimum: 5 }
 
   STARS = [
     [5, 'gorgeous'],
