@@ -1,4 +1,5 @@
 <%= form_with url: user_sessions_path, method: :post do |f| %>
+  <p id="notice"><%= notice %></p>
 
   <div class="field mb-3">
     <%= f.label t('email') %><br />
