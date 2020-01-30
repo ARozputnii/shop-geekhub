@@ -23,7 +23,9 @@ test:
 
 production:
   adapter: postgresql
-  host: 157.230.114.1
-  database: shop-geelhub
+  host: 104.248.21.221
+  database: shop-geethub
   username: deployer
   password: deployer
+  pool: 5
+  encoding: unicode

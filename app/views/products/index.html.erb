@@ -16,7 +16,6 @@
           <div class="card_body">
             <h5 class="card_title col"><%= @product.title%></h5>
             <p class="card_text col-md-8"><%= truncate(strip_tags(@product.description.to_s), length: 200) %></p>
-
             <div class="row col cart_price">
               <div class="col-md">
                 <h5><%= t('products.index.h5') %></h5>
