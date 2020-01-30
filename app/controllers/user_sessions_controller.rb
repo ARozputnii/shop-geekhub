@@ -10,8 +10,7 @@ class UserSessionsController < ApplicationController
     if @user
       redirect_to root_path, notice: t('controllers.sessions_controller.logged_in')
     else
-      flash.now[:alert] = t('controllers.sessions_controller.failed')
-      render :new
+      redirect_to new_user_session_path, notice: t('controllers.sessions_controller.failed')
     end
   end
 
